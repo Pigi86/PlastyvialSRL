@@ -31,7 +31,7 @@
         </div>
     </nav>
 
-    <a href="#home" class="back-to-top">↑</a>
+    <a href="#home" id="backToTopBtn" style="display:none;" class="back-to-top">↑</a>
 
     <!-- HERO -->
     <section class="hero" id="home">
@@ -668,6 +668,20 @@
                 if (t) t.scrollIntoView({ behavior: 'smooth' });
             });
         });
+
+        // Get the button
+        let mybutton = document.getElementById("backToTopBtn");
+
+        // When the user scrolls down 300px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
     </script>
 </body>
 </html>
