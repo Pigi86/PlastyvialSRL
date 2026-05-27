@@ -1234,7 +1234,9 @@ footer {
     align-items: center;
     justify-content: center;
     border-radius: 6px;
+    border:1px solid white;
     text-decoration: none;
+    color: white;
     transition: transform 0.15s ease, background 0.15s ease;
 }
 
