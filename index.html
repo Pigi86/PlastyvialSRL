@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -21,7 +20,12 @@
             <ul class="nav-links">
                 <li><a href="#about" data-i18n="nav-about">Nosotros</a></li>
                 <li><a href="#services" data-i18n="nav-services">Servicios</a></li>
-                <li><a href="#projects" data-i18n="nav-projects">Productos</a></li>
+                <li class="has-submenu">
+                    <a href="#projects" data-i18n="nav-projects">Productos</a>
+                    <ul class="submenu" aria-label="Submenu Productos">
+                        <li><a href="#gallery">Galería de Productos</a></li>
+                    </ul>
+                </li>
                 <li><a href="#contact" class="nav-cta" data-i18n="nav-contact">Contacto</a></li>
             </ul>
             <!--<div class="lang-switcher">
@@ -318,6 +322,46 @@
         </div>
     </section>
 
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="section-label">
+            <span></span>
+            <p>Galería</p>
+        </div>
+        <h2 class="section-title">Nuestros Productos</h2>
+        <p class="section-desc">Explore una selección de nuestros productos con imágenes y descripciones.</p>
+        <div class="gallery-grid">
+            <div class="gallery-card">
+                <div class="gallery-thumb" style="background-image:url('Images/product1.jpg')" data-full="Images/product1.jpg" data-caption="Auto Elevador Modelo A — Capacidad 2000kg" role="button" tabindex="0" aria-label="Ver imagen Auto Elevador Modelo A"></div>
+                <div class="gallery-info">
+                    <div class="gallery-name">Auto Elevador Modelo A</div>
+                    <div class="gallery-meta">Capacidad 2000kg · Motor Eléctrico</div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-thumb" style="background-image:url('Images/product2.jpg')" data-full="Images/product2.jpg" data-caption="Apilador Eléctrico X — Compacto" role="button" tabindex="0" aria-label="Ver imagen Apilador Eléctrico X"></div>
+                <div class="gallery-info">
+                    <div class="gallery-name">Apilador Eléctrico X</div>
+                    <div class="gallery-meta">Compacto · Batería incluida</div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-thumb" style="background-image:url('Images/product3.jpg')" data-full="Images/product3.jpg" data-caption="Batería Prestolite — Alta duración" role="button" tabindex="0" aria-label="Ver imagen Batería Prestolite"></div>
+                <div class="gallery-info">
+                    <div class="gallery-name">Batería Prestolite</div>
+                    <div class="gallery-meta">Alta duración · Garantía 12 meses</div>
+                </div>
+            </div>
+            <div class="gallery-card">
+                <div class="gallery-thumb" style="background-image:url('Images/product4.jpg')" data-full="Images/product4.jpg" data-caption="Hidroelevador Serie H — Alta performance" role="button" tabindex="0" aria-label="Ver imagen Hidroelevador Serie H"></div>
+                <div class="gallery-info">
+                    <div class="gallery-name">Hidroelevador Serie H</div>
+                    <div class="gallery-meta">Alta performance · Repuestos disponibles</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- WHY -->
     <section class="why">
         <div class="why-grid">
@@ -476,16 +520,16 @@
         </div>
         <div class="footer-social" aria-label="Redes Sociales">
             <a class="social-link" href="#" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="rgba(255,255,255,0.12)"/><text x="12" y="16" text-anchor="middle" font-family="DM Sans, Arial" font-size="12" fill="rgba(255,255,255,0.95)">f</text></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="rgba(255,255,255,0.12)" /><text x="12" y="16" text-anchor="middle" font-family="DM Sans, Arial" font-size="12" fill="rgba(255,255,255,0.95)">f</text></svg>
             </a>
             <a class="social-link" href="#" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="rgba(255,255,255,0.12)"/><text x="12" y="16" text-anchor="middle" font-family="DM Sans, Arial" font-size="9" fill="rgba(255,255,255,0.95)">IG</text></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="rgba(255,255,255,0.12)" /><text x="12" y="16" text-anchor="middle" font-family="DM Sans, Arial" font-size="9" fill="rgba(255,255,255,0.95)">IG</text></svg>
             </a>
             <a class="social-link" href="#" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" fill="none" stroke="rgba(255,255,255,0.12)"/><text x="12" y="16" text-anchor="middle" font-family="DM Sans, Arial" font-size="9" fill="rgba(255,255,255,0.95)">in</text></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="3" fill="none" stroke="rgba(255,255,255,0.12)" /><text x="12" y="16" text-anchor="middle" font-family="DM Sans, Arial" font-size="9" fill="rgba(255,255,255,0.95)">in</text></svg>
             </a>
             <a class="social-link" href="#" title="WhatsApp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="rgba(255,255,255,0.12)"/><text x="12" y="16" text-anchor="middle" font-family="DM Sans, Arial" font-size="9" fill="rgba(255,255,255,0.95)">wa</text></svg>
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="none" stroke="rgba(255,255,255,0.12)" /><text x="12" y="16" text-anchor="middle" font-family="DM Sans, Arial" font-size="9" fill="rgba(255,255,255,0.95)">wa</text></svg>
             </a>
         </div>
         <div class="footer-copy" data-i18n="footer-copy">
@@ -684,6 +728,45 @@
             });
         });
 
+        // SUBMENU: toggle on click to avoid hover flicker
+        (function () {
+            const parents = document.querySelectorAll('.nav-links .has-submenu');
+            parents.forEach(p => {
+                const link = p.querySelector('a');
+                link.addEventListener('mouseenter', (e) => {
+                    // prevent jumping to #projects and toggle submenu instead
+                    e.preventDefault();
+                    e.stopPropagation();
+                    p.classList.toggle('open');
+                });               
+
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        p.classList.toggle('open');
+                    }
+                });
+            });
+                        
+            const parents2 = document.querySelectorAll('.submenu');
+            parents2.forEach(p => {                
+                p.addEventListener('mouseleave', (e) => {
+                    // prevent jumping to #projects and toggle submenu instead
+                    
+                    p.parentElement.classList.remove('open');
+                });
+            });
+            
+
+
+            // close when clicking outside
+            document.addEventListener('click', (e) => {
+                parents.forEach(p => { if (!p.contains(e.target)) p.classList.remove('open'); });
+            });
+            // close on escape
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') parents.forEach(p => p.classList.remove('open')); });
+        })();
+
         // Get the button
         let mybutton = document.getElementById("backToTopBtn");
 
@@ -697,6 +780,63 @@
                 mybutton.style.display = "none";
             }
         }
+        // LIGHTBOX
+        (function () {
+            const thumbs = document.querySelectorAll('.gallery-thumb');
+
+            // create modal
+            const modal = document.createElement('div');
+            modal.className = 'lightbox-modal';
+            modal.innerHTML = `
+                <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
+                    <button class="lightbox-close" aria-label="Cerrar">✕</button>
+                    <img class="lightbox-img" src="" alt="" />
+                    <div class="lightbox-caption"></div>
+                    <button class="lightbox-prev" aria-label="Anterior">‹</button>
+                    <button class="lightbox-next" aria-label="Siguiente">›</button>
+                </div>`;
+            document.body.appendChild(modal);
+
+            const lightbox = document.querySelector('.lightbox-modal');
+            const img = lightbox.querySelector('.lightbox-img');
+            const caption = lightbox.querySelector('.lightbox-caption');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            const prevBtn = lightbox.querySelector('.lightbox-prev');
+            const nextBtn = lightbox.querySelector('.lightbox-next');
+
+            let currentIndex = -1;
+
+            function openAt(index) {
+                const t = thumbs[index];
+                if (!t) return;
+                const src = t.dataset.full || '';
+                const cap = t.dataset.caption || '';
+                img.src = src; img.alt = cap; caption.textContent = cap;
+                lightbox.classList.add('open');
+                currentIndex = index;
+                document.body.style.overflow = 'hidden';
+                closeBtn.focus();
+            }
+
+            function close() { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
+
+            thumbs.forEach((t, i) => {
+                t.addEventListener('click', () => openAt(i));
+                t.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openAt(i); } });
+            });
+
+            closeBtn.addEventListener('click', close);
+            lightbox.addEventListener('click', (e) => { if (e.target === lightbox) close(); });
+            prevBtn.addEventListener('click', () => openAt((currentIndex - 1 + thumbs.length) % thumbs.length));
+            nextBtn.addEventListener('click', () => openAt((currentIndex + 1) % thumbs.length));
+
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('open')) return;
+                if (e.key === 'Escape') close();
+                if (e.key === 'ArrowLeft') prevBtn.click();
+                if (e.key === 'ArrowRight') nextBtn.click();
+            });
+        })();
     </script>
 </body>
 </html>
