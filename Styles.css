@@ -1132,6 +1132,7 @@ footer {
         text-decoration: none;
         font-size: 0.78rem;
         color: rgba(255,255,255,0.3);
+        color: white;
         letter-spacing: 0.06em;
         text-transform: uppercase;
         transition: color 0.2s;
@@ -1144,6 +1145,7 @@ footer {
 .footer-copy {
     font-size: 0.75rem;
     color: rgba(255,255,255,0.2);
+    color: white;
 }
 
 .footer-social {
