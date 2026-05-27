@@ -464,6 +464,9 @@
                         <div class="contact-item-value" data-i18n="ci4-val">Lunes – Viernes, 8:00 am – 6:00 pm</div>
                     </div>
                 </div>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.19810423793!2d-58.43722858831118!3d-34.75060217278899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd8a23ec27c3%3A0x95fec0489efa0769!2sPres.%20Juan%20Domingo%20Per%C3%B3n%201468%2C%20B1832EYO%20Lomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1779909588683!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
             <div class="contact-form">
                 <div class="form-row">
@@ -739,7 +742,7 @@
                     e.preventDefault();
                     e.stopPropagation();
                     p.classList.toggle('open');
-                });               
+                });
 
                 link.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -748,16 +751,16 @@
                     }
                 });
             });
-                        
+
             const parents2 = document.querySelectorAll('.submenu');
-            parents2.forEach(p => {                
+            parents2.forEach(p => {
                 p.addEventListener('mouseleave', (e) => {
                     // prevent jumping to #projects and toggle submenu instead
-                    
+
                     p.parentElement.classList.remove('open');
                 });
             });
-            
+
 
 
             // close when clicking outside
