@@ -11,7 +11,7 @@
 <body>
     <!-- NAV -->
     <nav>
-        <a class="logo" href="#">
+        <a class="logo" href="#home">
             <div class="logo-mark"></div>
             <div class="logo-text">
                 <span class="logo-name">Plastyvial</span>
@@ -20,13 +20,13 @@
         </a>
         <div class="nav-right">
             <ul class="nav-links">
-                <li><a href="#home" data-i18n="nav-about">Inicio</a></li>                
+                <li><a href="#home" data-i18n="nav-about">Inicio</a></li>
                 <li class="has-submenu">
                     <a href="#about" data-i18n="nav-about">Nosotros</a>
                     <ul class="submenu" aria-label="Submenu Confian">
                         <li><a href="#confian">Nuestros Clientes</a></li>
                         <li><a href="#comoTrabajamos">Como Trabajamos</a></li>
-                        
+
                     </ul>
                 </li>
                 <li class="has-submenu">
@@ -99,12 +99,7 @@
         </div>
     </section>
 
-    <!-- TICKER -->
-    <div class="ticker">
-        <div class="ticker-inner" id="ticker-inner">
-            <!-- filled by JS -->
-        </div>
-    </div>
+
 
     <!-- ABOUT -->
     <section class="about" id="about">
@@ -166,8 +161,9 @@
     <section class="process" id="confian">
         <div class="section-label">
             <span></span>
-            <p data-i18n="proc-label">Empresas que confían en nuestros productos y servicios</p>
+            <p data-i18n="proc-label">Nuestro clientes</p>
         </div>
+        <h2 class="section-title" data-i18n="about-title">Empresas que confían en nuestros productos y servicios</h2>
         <div class="process-steps" style="position:inherit;">
             <div class="process-step">
                 <div class="step-name" data-i18n="p1-name">
@@ -691,6 +687,13 @@
         </div>
     </section>
 
+    <!-- TICKER -->
+    <div class="ticker">
+        <div class="ticker-inner" id="ticker-inner">
+            <!-- filled by JS -->
+        </div>
+    </div>
+
     <!-- FOOTER -->
     <footer>
         <a class="logo footer-logo" href="#">
@@ -727,6 +730,6 @@
         </div>
     </footer>
 
-    <script src="Script.js"></script>   
+    <script src="Script.js"></script>
 </body>
 </html>
