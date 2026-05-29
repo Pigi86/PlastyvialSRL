@@ -669,6 +669,44 @@ nav {
     opacity: 0.4;
 }
 
+.tickerImage {
+    background: transparent;
+    padding: 0.9rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;    
+}   
+
+.ticker-inner-image {
+    display: inline-flex;
+    gap: 0;
+    animation: ticker 28s linear infinite;
+}
+
+.ticker-item-image {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    width: 250px;
+    height: 50%;
+}
+
+@keyframes tickerImage {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
 @keyframes ticker {
     from {
         transform: translateX(0);
