@@ -16,19 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a');
 
     menuLinks.forEach(link => {
-
         link.addEventListener("click", function (e) {
-
             const targetId = this.getAttribute("href");
-
             if (!targetId || targetId === "#") return;
-
             const targetSection = document.querySelector(targetId);
-
             if (!targetSection) return;
-
             e.preventDefault();
-
             if (currentSection === targetSection) {
                 return;
             }
@@ -38,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             setTimeout(() => {
-
                 sections.forEach(section => {
                     section.style.display = "none";
                 });
@@ -49,17 +41,51 @@ document.addEventListener("DOMContentLoaded", () => {
                         : "block";
 
                 void targetSection.offsetWidth;
-
                 targetSection.classList.add("active");
-
                 currentSection = targetSection;
-
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 });
-
             }, 300);
+        });
+    });
+
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const navLinks = document.querySelector(".nav-links");
+    const overlay = document.getElementById("menuOverlay");
+
+    // TOGGLE MENU
+    mobileBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        //overlay.classList.toggle("active");
+    });
+
+    // CLOSE MENU
+    //overlay.addEventListener("click", closeMenu);
+
+    function closeMenu() {
+        navLinks.classList.remove("active");
+        //overlay.classList.remove("active");
+    }
+
+    // LINKS
+    document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+            if (!link.closest(".has-submenu")) {
+                closeMenu();
+            }
+        });
+    });
+
+    // SUBMENUS MOBILE
+    document.querySelectorAll(".has-submenu > a").forEach(link => {
+        link.addEventListener("click", (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parent = link.parentElement;
+                parent.classList.toggle("open");
+            }
         });
     });
 });
