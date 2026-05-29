@@ -1480,10 +1480,13 @@ section {
     .why-grid,
     .contact-grid,
     .services-grid,
-    .projects-grid,
     .gallery-grid,
     .process-steps {
-        /*grid-template-columns: 1fr !important;*/
+        grid-template-columns: 1fr !important;
+        flex-direction: column;
+    }
+
+    .projects-grid {
         grid-template-columns: repeat(2, 1fr) !important;
         flex-direction: column;
     }
@@ -1670,7 +1673,11 @@ section {
 
     /* HERO */
     .hero {
-        margin-top: 78px;
+        margin-top: 100px;
+    }
+
+    section {
+        margin-top: 100px !important; 
     }
 
     /* OVERLAY */
