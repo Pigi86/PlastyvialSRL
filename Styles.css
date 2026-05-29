@@ -725,6 +725,10 @@ section {
     background: var(--cream);
 }
 
+.about-image {
+    height:100%;
+}
+
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -740,6 +744,7 @@ section {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    height: 100%;
 }
 
 .about-img-accent {
