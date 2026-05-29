@@ -3,19 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
     let currentSection = document.querySelector("#home");
 
-    // Ocultar todas
     sections.forEach(section => {
         section.classList.remove("active");
     });
 
-    // Mostrar HOME inicialmente
     if (currentSection) {
         setTimeout(() => {
             currentSection.classList.add("active");
         }, 50);
     }
 
-    // Links menú
     const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a');
 
     menuLinks.forEach(link => {
@@ -32,49 +29,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
             e.preventDefault();
 
-            // SI YA ESTÁ VISIBLE → NO HACER NADA
             if (currentSection === targetSection) {
                 return;
             }
 
-            // Ocultar actual
             if (currentSection) {
                 currentSection.classList.remove("active");
             }
 
-            // Esperar animación salida
             setTimeout(() => {
 
                 sections.forEach(section => {
                     section.style.display = "none";
                 });
 
-                // Mostrar target
                 targetSection.style.display =
                     targetSection.classList.contains("hero")
                         ? "flex"
                         : "block";
 
-                // Reflow
                 void targetSection.offsetWidth;
 
-                // Entrada
                 targetSection.classList.add("active");
 
                 currentSection = targetSection;
 
-                // Scroll top
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 });
 
             }, 300);
-
         });
-
     });
-
 });
 
 // ── TRANSLATIONS ──
@@ -276,6 +263,14 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
             e.preventDefault();
             e.stopPropagation();
             p.classList.toggle('open');
+
+            const parents2 = document.querySelectorAll('.submenu');
+            parents2.forEach(p => {
+                p.style.display = "none";
+            });
+
+            p.children[1].style.display = "block";
+           
         });
 
         link.addEventListener('keydown', (e) => {
@@ -290,17 +285,36 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     parents2.forEach(p => {
         p.addEventListener('mouseleave', (e) => {
             // prevent jumping to #projects and toggle submenu instead
+            p.parentElement.classList.remove('open');
 
+            const parents2 = document.querySelectorAll('.submenu');
+            parents2.forEach(p => {
+                p.style.display = "none";
+            });
+        });
+    });
+
+    // close when clicking outside
+    document.addEventListener('click', (e) => {
+        //debugger;
+        parents.forEach(p => {
+            if (!p.contains(e.target)) {
+                p.classList.remove('open');
+            }
             p.parentElement.classList.remove('open');
         });
     });
 
-
-
-    // close when clicking outside
-    document.addEventListener('click', (e) => {
-        parents.forEach(p => { if (!p.contains(e.target)) p.classList.remove('open'); });
+    const parents3 = document.querySelectorAll('.submenu');
+    parents3.forEach(p => {
+        p.addEventListener('click', (e) => {
+            // prevent jumping to #projects and toggle submenu instead
+            p.classList.remove('open');
+            p.parentElement.classList.remove('open');
+            p.style.display = "none";
+        });
     });
+
     // close on escape
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') parents.forEach(p => p.classList.remove('open')); });
 })();
