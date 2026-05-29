@@ -180,18 +180,28 @@ const i18n = {
         //'f-desc': 'Descripción del Proyecto', 'ph-desc': 'Describa su proyecto — ubicación, alcance, plazos...',
         //'f-submit': 'Enviar Mensaje →', 'f-sent': '✓ ¡Mensaje Enviado!',
         //'footer-copy': '© 2024 Plastyvial S.R.L. Todos los derechos reservados.',
-        'ticker': ['Autoelevadores', 'Camiones', 'Apiladores Eléctricas', 'Repuestos', 'Hidroelevadores e Hidrogruas', 'Capacitación']
+        'ticker': ['Autoelevadores', 'Camiones', 'Apiladores Eléctricas', 'Repuestos', 'Hidroelevadores e Hidrogruas', 'Capacitación'],
+        'tickerImage': ['Images/cocacola-logo.jpeg', 'Images/vigia.png', 'Images/prestolite.png', 'Images/TCM.jpg', 'Images/nichiyu.jpg', 'Images/komatsu.jpg', 'Images/shinko.svg', 'Images/toyota.jpg', 'Images/clark.jpg', 'Images/nissan.jpg', 'Images/mitsubishi.jpg'],        
     }
 };
 
 let currentLang = 'es';
 buildTicker(currentLang);
+buildTickerImage(currentLang);
 
 function buildTicker(lang) {
     const items = i18n[lang].ticker;
     const doubled = [...items, ...items];
     document.getElementById('ticker-inner').innerHTML = doubled.map(t =>
         `<span class="ticker-item">${t}<span class="ticker-dot"></span></span>`
+    ).join('');
+}
+
+function buildTickerImage(lang) {
+    const items = i18n[lang].tickerImage;
+    const doubled = [...items, ...items];
+    document.getElementById('ticker-inner-image').innerHTML = doubled.map(t =>
+        `<img class="ticker-item-image" src="${t}" /><span class="ticker-dot-image"></span>`
     ).join('');
 }
 
