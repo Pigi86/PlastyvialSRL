@@ -1587,5 +1587,104 @@ section {
     section {
         padding-left: 15px !important;
         padding-right: 15px !important;
+        margin-top:100px !important;
     }
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu-btn {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--navy);
+    z-index: 2001;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    nav {
+        padding: 1rem 1.2rem;
+        position: fixed;
+        width: 100%;
+    }
+
+    /* BOTON */
+    .mobile-menu-btn {
+        display: block;
+        margin-left: auto;
+    }
+
+    /* MENU */
+    .nav-links {
+        position: fixed;
+        top: 78px;
+        left: -100%;
+        width: 75%;
+        height: calc(100vh - 78px);
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 2rem;
+        gap: 1.5rem;
+        transition: left 0.35s ease;
+        box-shadow: 8px 0 30px rgba(0,0,0,0.08);
+        z-index: 2000;
+    }
+
+        /* MENU ABIERTO */
+        .nav-links.active {
+            left: 0;
+        }
+
+        .nav-links li {
+            width: 100%;
+            list-style: none;
+        }
+
+        .nav-links a {
+            width: 100%;
+            display: block;
+            font-size: 0.95rem;
+            padding: 0.8rem 0;
+        }
+
+    /* SUBMENUS */
+    .submenu {
+        position: static !important;
+        display: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+        padding-left: 1rem !important;
+        margin-top: 0.5rem;
+    }
+
+    .has-submenu.open .submenu {
+        display: block !important;
+    }
+
+    /* HERO */
+    .hero {
+        margin-top: 78px;
+    }
+
+    /* OVERLAY */
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.35);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+        z-index: 1500;
+    }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
 }
