@@ -1483,7 +1483,8 @@ section {
     .projects-grid,
     .gallery-grid,
     .process-steps {
-        grid-template-columns: 1fr !important;
+        /*grid-template-columns: 1fr !important;*/
+        grid-template-columns: repeat(2, 1fr) !important;
         flex-direction: column;
     }
 
