@@ -612,6 +612,7 @@ nav {
     z-index: 1;
     text-align: center;
     line-height: 1.6;
+    padding: 10px;
 }
 
     .blueprint-text strong {
@@ -1423,6 +1424,10 @@ footer {
     .footer-social {
         margin-top: 0.5rem;
     }
+
+    .blueprint-text{
+        padding: 80px !important;
+    }
 }
 
 /* ── MOBILE ── */
@@ -1533,7 +1538,7 @@ section {
     }
 
     body {
-        min-height: 100dvh;
+        min-height: 100vh;
     }
 
     .hero {
@@ -1569,5 +1574,9 @@ section {
     svg {
         max-width: 100%;
         height: auto;
+    }
+
+    .blueprint-text {
+        padding: 80px !important;
     }
 }
