@@ -251,6 +251,7 @@ nav {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    width: 86%;
 }
 
     .hero-left::before {
