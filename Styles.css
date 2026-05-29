@@ -239,7 +239,8 @@ nav {
 .hero {
     /*min-height: 100vh;*/
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;    
+    align-items: stretch;
     /*padding-top: 72px;*/
 }
 
@@ -1435,7 +1436,7 @@ footer {
     }
 
     .hero-left {
-        min-height: calc(100vh - 72px);
+        min-height: calc(100dvh - 72px);
     }
 
     .about-grid, .contact-grid, .why-grid {
@@ -1522,155 +1523,49 @@ section {
     }
 
 
-/* =========================================
-   MOBILE FIX COMPLETO
-========================================= */
+/* FIX ESPACIO BLANCO MOBILE */
 @media (max-width: 768px) {
 
     html,
     body {
-        width: 100%;
         overflow-x: hidden;
+        width: 100%;
     }
 
-    section {
-        padding: 4rem 1.5rem !important;
-        min-height: auto !important;
-        height: auto !important;
+    body {
+        min-height: 100dvh;
     }
 
-    /* HERO */
     .hero {
         display: flex !important;
         flex-direction: column !important;
-        min-height: auto !important;
+        width: 100%;
     }
 
     .hero-left,
     .hero-right {
         width: 100% !important;
-        padding: 6rem 1.5rem 3rem 1.5rem !important;
+        max-width: 100% !important;
+        padding: 5rem 1.5rem 3rem 1.5rem !important;
     }
 
-    .hero-left {
-        overflow: hidden;
-    }
-
-    .hero-title {
-        font-size: 2rem !important;
-        line-height: 1.2;
-    }
-
-    .hero-desc {
-        max-width: 100%;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-    }
-
-    .btn-primary,
-    .btn-outline {
-        width: 100%;
-        text-align: center;
-        justify-content: center;
+    .hero-right {
+        padding-top: 2rem !important;
     }
 
     .hero-stats {
         grid-template-columns: 1fr !important;
     }
 
-    /* ABOUT */
-    .about-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem;
-    }
-
-    .about-features {
-        grid-template-columns: 1fr !important;
-    }
-
-    .about-img-box {
-        height: 300px;
-    }
-
-    .about-badge {
-        left: 1rem;
-        bottom: 1rem;
-    }
-
-    /* SERVICES */
-    .services-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* PROCESS */
-    .process-steps {
-        grid-template-columns: 1fr !important;
-        gap: 2rem;
-    }
-
-        .process-steps::before {
-            display: none;
-        }
-
-    /* PROJECTS */
-    .projects-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .project-card.featured {
-        grid-column: span 1;
-    }
-
-    /* WHY */
-    .why-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem;
-    }
-
-    .why-visual {
-        grid-template-columns: 1fr !important;
-    }
-
-    /* CONTACT */
-    .contact-grid {
-        grid-template-columns: 1fr !important;
-        gap: 2rem;
-    }
-
-    /* NAV */
-    nav {
-        padding: 1rem 1.5rem;
-    }
-
-    .nav-links {
+    .stat-card {
         width: 100%;
     }
 
-    /* TICKER */
-    .ticker-item {
-        padding: 0 1rem;
-        font-size: 0.65rem;
+    section {
+        overflow: hidden;
     }
 
-    .ticker-item-image {
-        width: 140px;
-    }
-
-    /* LIGHTBOX */
-    .lightbox-img {
-        max-width: 95%;
-        max-height: 70vh;
-    }
-
-    /* IMAGENES */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* SVG */
+    img,
     svg {
         max-width: 100%;
         height: auto;
