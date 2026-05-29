@@ -20,8 +20,15 @@
         </a>
         <div class="nav-right">
             <ul class="nav-links">
-                <li><a href="#home" data-i18n="nav-about">Inicio</a></li>
-                <li><a href="#about" data-i18n="nav-about">Nosotros</a></li>
+                <li><a href="#home" data-i18n="nav-about">Inicio</a></li>                
+                <li class="has-submenu">
+                    <a href="#about" data-i18n="nav-about">Nosotros</a>
+                    <ul class="submenu" aria-label="Submenu Confian">
+                        <li><a href="#confian">Nuestros Clientes</a></li>
+                        <li><a href="#comoTrabajamos">Como Trabajamos</a></li>
+                        
+                    </ul>
+                </li>
                 <li class="has-submenu">
                     <a href="#services" data-i18n="nav-services">Servicios</a>
                     <ul class="submenu" aria-label="Submenu Servicios">
@@ -156,7 +163,7 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="process">
+    <section class="process" id="confian">
         <div class="section-label">
             <span></span>
             <p data-i18n="proc-label">Empresas que confían en nuestros productos y servicios</p>
@@ -407,7 +414,7 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="process">
+    <section class="process" id="comoTrabajamos">
         <div class="section-label">
             <span></span>
             <p data-i18n="proc-label">Cómo Trabajamos</p>
@@ -541,7 +548,7 @@
     </section>
 
     <!-- WHY -->
-    <section class="why">
+    <section class="why" id="why">
         <div class="why-grid">
             <div>
                 <div class="section-label">
