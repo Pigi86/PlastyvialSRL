@@ -1457,3 +1457,20 @@ footer {
     border-radius: 5px;
     z-index: 1000; /* Keeps it above other content */
 }
+
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    display: none;
+}
+
+    section.active {
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    section.hero.active {
+        display: flex;
+    }
