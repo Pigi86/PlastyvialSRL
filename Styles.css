@@ -611,8 +611,7 @@ nav {
     color: rgba(255,255,255,0.7);
     z-index: 1;
     text-align: center;
-    line-height: 1.6;
-    padding: 10px;
+    line-height: 1.6;   
 }
 
     .blueprint-text strong {
@@ -1423,11 +1422,7 @@ footer {
 @media (max-width: 900px) {
     .footer-social {
         margin-top: 0.5rem;
-    }
-
-    .blueprint-text{
-        padding: 80px !important;
-    }
+    }  
 }
 
 /* ── MOBILE ── */
@@ -1436,10 +1431,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .hero-right {
-        display: none;
+    section.hero.active {
+        display: block !important;
     }
-
+   
     .hero-left {
         min-height: calc(100dvh - 72px);
     }
@@ -1526,57 +1521,3 @@ section {
     section.hero.active {
         display: flex;
     }
-
-
-/* FIX ESPACIO BLANCO MOBILE */
-@media (max-width: 768px) {
-
-    html,
-    body {
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    body {
-        min-height: 100vh;
-    }
-
-    .hero {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100%;
-    }
-
-    .hero-left,
-    .hero-right {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 5rem 1.5rem 3rem 1.5rem !important;
-    }
-
-    .hero-right {
-        padding-top: 2rem !important;
-    }
-
-    .hero-stats {
-        grid-template-columns: 1fr !important;
-    }
-
-    .stat-card {
-        width: 100%;
-    }
-
-    section {
-        overflow: hidden;
-    }
-
-    img,
-    svg {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .blueprint-text {
-        padding: 80px !important;
-    }
-}
