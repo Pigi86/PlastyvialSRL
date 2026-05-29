@@ -944,6 +944,10 @@ section {
     text-align: center;
 }
 
+.step-name img {
+    width: 50% !important;
+}
+
 .step-circle {
     width: 56px;
     height: 56px;
