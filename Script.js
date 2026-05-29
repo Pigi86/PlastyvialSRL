@@ -1,4 +1,63 @@
-﻿// ── TRANSLATIONS ──
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+
+    sections.forEach(section => {
+        section.classList.remove("active");
+    });
+
+    const home = document.querySelector("#home");
+
+    if (home) {
+        setTimeout(() => {
+            home.classList.add("active");
+        }, 50);
+    }
+
+    const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a');
+
+    menuLinks.forEach(link => {
+
+        link.addEventListener("click", function (e) {
+
+            const targetId = this.getAttribute("href");
+
+            if (!targetId || targetId === "#") return;
+
+            const targetSection = document.querySelector(targetId);
+
+            if (!targetSection) return;
+
+            e.preventDefault();
+
+            sections.forEach(section => {
+                section.classList.remove("active");
+            });
+
+            setTimeout(() => {
+
+                sections.forEach(section => {
+                    section.style.display = "none";
+                });
+
+                targetSection.style.display =
+                    targetSection.classList.contains("hero")
+                        ? "flex"
+                        : "block";
+
+                void targetSection.offsetWidth;
+
+                targetSection.classList.add("active");
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }, 300);
+        });
+    });
+});
+
+// ── TRANSLATIONS ──
 const i18n = {
     en: {
         //'logo-sub': 'S.R.L. — Civil Engineering',
