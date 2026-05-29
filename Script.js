@@ -1,18 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
 
+    const sections = document.querySelectorAll("section");
+    let currentSection = document.querySelector("#home");
+
+    // Ocultar todas
     sections.forEach(section => {
         section.classList.remove("active");
     });
 
-    const home = document.querySelector("#home");
-
-    if (home) {
+    // Mostrar HOME inicialmente
+    if (currentSection) {
         setTimeout(() => {
-            home.classList.add("active");
+            currentSection.classList.add("active");
         }, 50);
     }
 
+    // Links menú
     const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a');
 
     menuLinks.forEach(link => {
@@ -29,32 +32,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
             e.preventDefault();
 
-            sections.forEach(section => {
-                section.classList.remove("active");
-            });
+            // SI YA ESTÁ VISIBLE → NO HACER NADA
+            if (currentSection === targetSection) {
+                return;
+            }
 
+            // Ocultar actual
+            if (currentSection) {
+                currentSection.classList.remove("active");
+            }
+
+            // Esperar animación salida
             setTimeout(() => {
 
                 sections.forEach(section => {
                     section.style.display = "none";
                 });
 
+                // Mostrar target
                 targetSection.style.display =
                     targetSection.classList.contains("hero")
                         ? "flex"
                         : "block";
 
+                // Reflow
                 void targetSection.offsetWidth;
 
+                // Entrada
                 targetSection.classList.add("active");
 
+                currentSection = targetSection;
+
+                // Scroll top
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 });
+
             }, 300);
+
         });
+
     });
+
 });
 
 // ── TRANSLATIONS ──
