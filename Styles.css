@@ -110,7 +110,7 @@ nav {
     width: 70px;
     height: 60px;
     /*background: var(--navy);*/
-    background-image: url('Images/logo.png');
+    background-image: url('Images/logo_.png');
     background-size: 70px;
     background-repeat: no-repeat;
     clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%);
