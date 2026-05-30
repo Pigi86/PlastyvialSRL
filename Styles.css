@@ -235,7 +235,7 @@ nav {
 }
 
     .nav-cta:hover {
-        background: var(--steel) !important;
+        background: var(--gold) !important;
         color: var(--white) !important;
     }
 
