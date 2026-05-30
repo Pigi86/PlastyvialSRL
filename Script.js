@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 50);
     }
 
-    const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a');
+    const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a, #solicitarBtn, #verProdBtn');
 
     menuLinks.forEach(link => {
         link.addEventListener("click", function (e) {
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // SUBMENUS MOBILE
     document.querySelectorAll(".has-submenu > a").forEach(link => {
         link.addEventListener("click", (e) => {
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 900) {
                 e.preventDefault();
                 const parent = link.parentElement;
                 parent.classList.toggle("open");
