@@ -207,7 +207,7 @@ const i18n = {
         //'f-submit': 'Enviar Mensaje →', 'f-sent': '✓ ¡Mensaje Enviado!',
         //'footer-copy': '© 2024 Plastyvial S.R.L. Todos los derechos reservados.',
         'ticker': ['Autoelevadores', 'Camiones', 'Apiladores Eléctricas', 'Repuestos', 'Hidroelevadores e Hidrogruas', 'Capacitación'],
-        'tickerImage': ['Images/prestolite.png', 'Images/TCM.jpg', 'Images/nichiyu.jpg', 'Images/komatsu.jpg', 'Images/shinko.svg', 'Images/toyota.jpg', 'Images/clark.jpg', 'Images/nissan.jpg', 'Images/mitsubishi.jpg'],        
+        'tickerImage': ['Images/prestolite.png', 'Images/TCM.jpg', 'Images/nichiyu.jpg', 'Images/wheelpam_logo.jfif','Images/komatsu.jpg', 'Images/shinko.svg', 'Images/toyota.jpg', 'Images/clark.jpg', 'Images/nissan.jpg', 'Images/mitsubishi.jpg'],
     }
 };
 
