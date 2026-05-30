@@ -272,13 +272,20 @@ window.addEventListener('scroll', () => {
 
 function handleSubmit(e) {
     e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    btn.textContent = i18n[currentLang]['f-sent'];
-    btn.style.background = '#4a90a4'; btn.style.color = '#fff';
-    setTimeout(() => {
-        btn.textContent = i18n[currentLang]['f-submit'];
-        btn.style.background = ''; btn.style.color = '';
-    }, 3000);
+    
+    const myForm = document.querySelector('#contactForm');
+
+    const isValid = myForm.reportValidity();
+
+    if (isValid) {
+        const btn = document.getElementById('submit-btn');
+        btn.textContent = i18n[currentLang]['f-sent'];
+        btn.style.background = '#4a90a4'; btn.style.color = '#fff';
+        setTimeout(() => {
+            btn.textContent = i18n[currentLang]['f-submit'];
+            btn.style.background = ''; btn.style.color = '';
+        }, 3000);
+    }
 }
 
 document.querySelectorAll('a[href^="#"]').forEach(a => {
