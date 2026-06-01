@@ -333,6 +333,11 @@ nav {
     animation: fadeUp 0.7s 0.65s ease both;
 }
 
+.section-desc em {
+    font-style: italic;
+    color: var(--gold);
+}
+
 .btn-primary {
     display: inline-block;
     background: var(--gold);
