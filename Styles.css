@@ -674,7 +674,7 @@ nav {
     text-transform: uppercase;
     color: var(--navy);
     width: 250px;
-    height: 50%;
+    height: 150px;
 }
 
 @keyframes tickerImage {
