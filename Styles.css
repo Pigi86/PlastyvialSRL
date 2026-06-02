@@ -1280,7 +1280,8 @@ section {
         font-size: 0.72rem;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: rgba(255,255,255,0.4);
+        /*color: rgba(255,255,255,0.4);*/
+        color: var(--sky);
     }
 
     .form-group input, .form-group textarea, .form-group select {
