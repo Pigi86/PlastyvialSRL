@@ -94,6 +94,11 @@ nav {
     }
 }
 
+.inicio {
+    display: flex;
+    height: 33px;
+}
+
 .nav-right {
     display: flex;
     align-items: center;
@@ -1633,12 +1638,16 @@ section {
         margin-left: auto;
     }
 
+    .inicio {
+    }
+
     /* MENU */
     .nav-links {
+        text-align: center;
         position: fixed;
         top: 78px;
         left: -100%;
-        width: 75%;
+        width: 100%;
         height: calc(100vh - 78px);
         background: white;
         flex-direction: column;
