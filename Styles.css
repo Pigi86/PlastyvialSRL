@@ -112,11 +112,14 @@ nav {
 }
 
 .logo-mark {
-    width: 70px;
-    height: 60px;
+    /* width: 70px;
+    height: 60px;*/
+    width: 100px;
+    height: 68px;
     /*background: var(--navy);*/
     background-image: url('Images/logo_.png');
-    background-size: 70px;
+    /*background-size: 70px;*/
+    background-size: 100px;
     background-repeat: no-repeat;
     clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%);
     display: flex;
