@@ -64,9 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // CLOSE MENU
     //overlay.addEventListener("click", closeMenu);
 
-    function closeMenu() {
+    function closeMenu() {        
         navLinks.classList.remove("active");
-        //overlay.classList.remove("active");
+        //  overlay.classList.remove("active");
     }
 
     // LINKS
@@ -75,6 +75,12 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!link.closest(".has-submenu")) {
                 closeMenu();
             }
+        });
+    });
+
+    document.querySelectorAll(".submenu a").forEach(link => {
+        link.addEventListener("click", () => {
+            closeMenu();
         });
     });
 
@@ -207,7 +213,7 @@ const i18n = {
         //'f-submit': 'Enviar Mensaje →', 'f-sent': '✓ ¡Mensaje Enviado!',
         //'footer-copy': '© 2024 Plastyvial S.R.L. Todos los derechos reservados.',
         'ticker': ['Autoelevadores', 'Camiones', 'Apiladores Eléctricas', 'Repuestos', 'Hidroelevadores e Hidrogruas', 'Capacitación'],
-        'tickerImage': ['Images/prestolite.png', 'Images/TCM.jpg', 'Images/nichiyu.jpg', 'Images/wheelpam_logo.jfif','Images/komatsu.jpg', 'Images/shinko.svg', 'Images/toyota.jpg', 'Images/clark.jpg', 'Images/nissan.jpg', 'Images/mitsubishi.jpg'],
+        'tickerImage': ['Images/prestolite.png', 'Images/TCM.jpg', 'Images/nichiyu.jpg', 'Images/wheelpam_logo.jfif', 'Images/komatsu.jpg', 'Images/shinko.svg', 'Images/toyota.jpg', 'Images/clark.jpg', 'Images/nissan.jpg', 'Images/mitsubishi.jpg'],
     }
 };
 
@@ -272,7 +278,7 @@ window.addEventListener('scroll', () => {
 
 function handleSubmit(e) {
     e.preventDefault();
-    
+
     const myForm = document.querySelector('#contactForm');
 
     const isValid = myForm.reportValidity();
@@ -313,7 +319,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
             });
 
             p.children[1].style.display = "block";
-           
+
         });
 
         link.addEventListener('keydown', (e) => {
