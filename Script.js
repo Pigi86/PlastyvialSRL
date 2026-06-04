@@ -188,7 +188,7 @@ const i18n = {
 };
 
 const ticker = ['Autoelevadores', 'Camiones', 'Apiladores Eléctricas', 'Repuestos', 'Hidroelevadores e Hidrogruas', 'Capacitación'];
-const tickerImage = ['Images/prestolite.png', 'Images/TCM.jpg', 'Images/nichiyu.jpg', 'Images/wheelpam_logo.jfif', 'Images/komatsu.jpg', 'Images/shinko.svg', 'Images/toyota.jpg', 'Images/clark.jpg', 'Images/nissan.jpg', 'Images/mitsubishi.jpg'];
+const tickerImage = ['Images/Marcas/prestolite.png', 'Images/Marcas/TCM.jpg', 'Images/Marcas/nichiyu.jpg', 'Images/Marcas/wheelpam_logo.jfif', 'Images/Marcas/komatsu.jpg', 'Images/Marcas/shinko.svg', 'Images/Marcas/toyota.jpg', 'Images/Marcas/clark.jpg', 'Images/Marcas/nissan.jpg', 'Images/Marcas/mitsubishi.jpg'];
 
 let currentLang = 'es';
 
