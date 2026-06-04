@@ -105,10 +105,10 @@ class Image {
 }
 
 const imageList = [
-    new Image("Autoelevador Modelo A", "Completo sistema de luces y equipo de seguridad. Visibilidad Alta.Mástiles standard y triples. Fácil acceso al motor de combustión para chequeo. Alta succión de aire para el sistema filtrado.", "Images/25EFL.jpeg"),
-    new Image("Apilador Eléctrico X", "Distribuidores de pallet truck. Amplio stock de carretillas hidráulticas de 2.5 con ruedas en tandem y alta calidad de terminación. Carretillas electrohidráulicas de 05 a 1.5 toneladas de capacidad de 1 a 3.5 metros de altura de elevación.", "Images/apiladoras.jpg"),
-    new Image("Batería Prestolite", "Comercialización y distribución de baterías vehiculares y de tracción marca Prestolite. Asesoramiento técnico. Baterías de tracción 24V - 48V - 560 - 700. Conectores Anderson y Remma.", "Images/bateria.jpg"),
-    new Image("Hidroelevador Serie H", ">Desmontaje y montaje de equipos. Reparación y construcción de estabilizadores y tramos de pluma - viga cajón o reticulados. Especialistas en marcas mundialmente conocidas, reparamos motores hidráulicos de giro y arrollamiento-coronas y sin fin. Testeo mecánico general y análisis de cordones de soldadura-estabilidad. Capacitación técnica y reparación de barquillas de fibra-construcción y cambio de pernos y bujes de brazos articulados.", "Images/hidroelevador.png")
+    new Image("Autoelevador Modelo A", "Completo sistema de luces y equipo de seguridad. Visibilidad Alta.Mástiles standard y triples. Fácil acceso al motor de combustión para chequeo. Alta succión de aire para el sistema filtrado.", "Images/Gallery/25EFL.jpeg"),
+    new Image("Apilador Eléctrico X", "Distribuidores de pallet truck. Amplio stock de carretillas hidráulticas de 2.5 con ruedas en tandem y alta calidad de terminación. Carretillas electrohidráulicas de 05 a 1.5 toneladas de capacidad de 1 a 3.5 metros de altura de elevación.", "Images/Gallery/apiladoras.jpg"),
+    new Image("Batería Prestolite", "Comercialización y distribución de baterías vehiculares y de tracción marca Prestolite. Asesoramiento técnico. Baterías de tracción 24V - 48V - 560 - 700. Conectores Anderson y Remma.", "Images/Gallery/bateria.jpg"),
+    new Image("Hidroelevador Serie H", ">Desmontaje y montaje de equipos. Reparación y construcción de estabilizadores y tramos de pluma - viga cajón o reticulados. Especialistas en marcas mundialmente conocidas, reparamos motores hidráulicos de giro y arrollamiento-coronas y sin fin. Testeo mecánico general y análisis de cordones de soldadura-estabilidad. Capacitación técnica y reparación de barquillas de fibra-construcción y cambio de pernos y bujes de brazos articulados.", "Images/Gallery/hidroelevador.png")
 ];
 
 function buidGallery() {
@@ -136,11 +136,11 @@ class Product {
 }
 
 const productList = [
-    new Product(true, "Autoelevadores", "Autoelevadores", "Diverso parque de autoelevadores a combustión gasoil, nafta y GLP.", "Images/25EFL.jpeg"),
-    new Product(false, "Kit Electricos para Seguridad", "Kit Electricos para Seguridad", "Comercialización de kit eléctricos para sistemas de seguridad.", "Images/Kit-de-seguridad-y-emergencia-automotriz.png"),
-    new Product(false, "Asientos para Autoelevadores y Camiones", "Llantas Simples o Dobles", "Comercializamos asientos para autoelevadores y camiones con bases hidráulicas, ergonométricos con suspensión elásticas regulables.", "Images/asiento.jpg"),
-    new Product(false, "Apiladoras Eléctricas", "Cadenas de Elevación para Autoelevadores", "Comercializamos cadenas de elevación para autoelevadores tipo fleyer - BL - LH.", "Images/apiladoras.jpg"),
-    new Product(false, "Repuestos", "Cubiertas Industriales", "Distribuimos cubiertas industriales en varias calidades incluyendo ecológicas, aros engomados cuchion y de poliuretano.", "Images/neumatico.jpg"),
+    new Product(true, "Autoelevadores", "Autoelevadores", "Diverso parque de autoelevadores a combustión gasoil, nafta y GLP.", "Images/Products/25EFL.jpeg"),
+    new Product(false, "Kit Electricos para Seguridad", "Kit Electricos para Seguridad", "Comercialización de kit eléctricos para sistemas de seguridad.", "Images/Products/Kit-de-seguridad-y-emergencia-automotriz.png"),
+    new Product(false, "Asientos para Autoelevadores y Camiones", "Llantas Simples o Dobles", "Comercializamos asientos para autoelevadores y camiones con bases hidráulicas, ergonométricos con suspensión elásticas regulables.", "Images/Products/asiento.jpg"),
+    new Product(false, "Apiladoras Eléctricas", "Cadenas de Elevación para Autoelevadores", "Comercializamos cadenas de elevación para autoelevadores tipo fleyer - BL - LH.", "Images/Products/apiladoras.jpg"),
+    new Product(false, "Repuestos", "Cubiertas Industriales", "Distribuimos cubiertas industriales en varias calidades incluyendo ecológicas, aros engomados cuchion y de poliuretano.", "Images/Products/neumatico.jpg"),
 ];
 
 function buidProducts() {
