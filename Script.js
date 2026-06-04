@@ -111,13 +111,26 @@ const imageList = [
     new Image("Hidroelevador Serie H", ">Desmontaje y montaje de equipos. Reparación y construcción de estabilizadores y tramos de pluma - viga cajón o reticulados. Especialistas en marcas mundialmente conocidas, reparamos motores hidráulicos de giro y arrollamiento-coronas y sin fin. Testeo mecánico general y análisis de cordones de soldadura-estabilidad. Capacitación técnica y reparación de barquillas de fibra-construcción y cambio de pernos y bujes de brazos articulados.", "Images/hidroelevador.png")
 ];
 
+function buidGallery() {
+    const items = imageList;
+    const doubled = [...items];
+    document.getElementById('gallery-grid').innerHTML = doubled.map(t =>
+        `<div class="gallery-card">
+                <div class="gallery-thumb" style="background-image: url('${t.url}');" data-full="${t.url}" data-caption="" role="button" tabindex="0" aria-label="Ver imagen ${t.name}"></div>
+                <div class="gallery-info">
+                    <div class="gallery-name">${t.name}</div>
+                    <div class="gallery-meta">${t.meta}</div>
+                </div>
+            </div>`
+    ).join('');
+}
 
 class Product {
     constructor(featured, tag, name, meta, url) {
         this.featured = featured;
         this.tag = tag;
         this.name = name;
-        this.meta = name;
+        this.meta = meta;
         this.url = url;
     }
 }
@@ -163,20 +176,6 @@ function buidProducts() {
 buidProducts();
 
 buidGallery();
-
-function buidGallery() {
-    const items = imageList;
-    const doubled = [...items];
-    document.getElementById('gallery-grid').innerHTML = doubled.map(t =>
-        `<div class="gallery-card">
-                <div class="gallery-thumb" style="background-image: url('${t.url}');" data-full="${t.url}" data-caption="" role="button" tabindex="0" aria-label="Ver imagen ${t.name}"></div>
-                <div class="gallery-info">
-                    <div class="gallery-name">${t.name}</div>
-                    <div class="gallery-meta">${t.meta}</div>
-                </div>
-            </div>`
-    ).join('');
-}
 
 // ── TRANSLATIONS ──
 const i18n = {
