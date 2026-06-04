@@ -143,7 +143,7 @@ const productList = [
     new Product(false, "Repuestos", "Cubiertas Industriales", "Distribuimos cubiertas industriales en varias calidades incluyendo ecológicas, aros engomados cuchion y de poliuretano.", "Images/neumatico.jpg"),
 ];
 
-function buidProducts() {    
+function buidProducts() {
     const items = productList;
     const doubled = [...items];
     document.getElementById('products-grid').innerHTML = doubled.map(t => {
@@ -183,25 +183,28 @@ const i18n = {
         //'ticker': ['Road Construction', 'Bridge Engineering', 'Hydraulic Systems', 'Urban Infrastructure', 'Structural Works', 'Environmental Projects']
     },
     es: {
-        'ticker': ['Autoelevadores', 'Camiones', 'Apiladores Eléctricas', 'Repuestos', 'Hidroelevadores e Hidrogruas', 'Capacitación'],
-        'tickerImage': ['Images/prestolite.png', 'Images/TCM.jpg', 'Images/nichiyu.jpg', 'Images/wheelpam_logo.jfif', 'Images/komatsu.jpg', 'Images/shinko.svg', 'Images/toyota.jpg', 'Images/clark.jpg', 'Images/nissan.jpg', 'Images/mitsubishi.jpg'],
+        //'ticker': ['Road Construction', 'Bridge Engineering', 'Hydraulic Systems', 'Urban Infrastructure', 'Structural Works', 'Environmental Projects']
     }
 };
 
-let currentLang = 'es';
-buildTicker(currentLang);
-buildTickerImage(currentLang);
+const ticker = ['Autoelevadores', 'Camiones', 'Apiladores Eléctricas', 'Repuestos', 'Hidroelevadores e Hidrogruas', 'Capacitación'];
+const tickerImage = ['Images/prestolite.png', 'Images/TCM.jpg', 'Images/nichiyu.jpg', 'Images/wheelpam_logo.jfif', 'Images/komatsu.jpg', 'Images/shinko.svg', 'Images/toyota.jpg', 'Images/clark.jpg', 'Images/nissan.jpg', 'Images/mitsubishi.jpg'];
 
-function buildTicker(lang) {
-    const items = i18n[lang].ticker;
+let currentLang = 'es';
+
+buildTicker();
+buildTickerImage();
+
+function buildTicker() {
+    const items = ticker;
     const doubled = [...items, ...items];
     document.getElementById('ticker-inner').innerHTML = doubled.map(t =>
         `<span class="ticker-item">${t}<span class="ticker-dot"></span></span>`
     ).join('');
 }
 
-function buildTickerImage(lang) {
-    const items = i18n[lang].tickerImage;
+function buildTickerImage() {
+    const items = tickerImage;
     const doubled = [...items, ...items];
     document.getElementById('ticker-inner-image').innerHTML = doubled.map(t =>
         `<img class="ticker-item-image" src="${t}" /><span class="ticker-dot-image"></span>`
