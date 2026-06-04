@@ -229,7 +229,7 @@ nav {
 
         .nav-links a:hover {
             color: var(--cream);
-            background-color: #c8a84b;
+            background-color: var(--gold);
         }
 
 .nav-cta {
@@ -1089,7 +1089,7 @@ section {
 
 /* ── WHY ── */
 .why {
-    background: #f7f4ef;
+    background: var(--cream);
 }
 
 .why-grid {
@@ -1361,7 +1361,7 @@ footer {
     }
 
         .footer-links a:hover {
-            color: #c8a84b;
+            color: var(--gold);
         }
 
 .footer-copy {
@@ -1406,7 +1406,7 @@ footer {
     bottom: 20px;
     right: 20px;
     padding: 10px 15px;
-    background-color: #c8a84b;
+    background-color: var(--gold);
     color: black;
     text-decoration: none;
     border-radius: 5px;
