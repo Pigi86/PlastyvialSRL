@@ -253,18 +253,19 @@ window.addEventListener('scroll', () => {
 function handleSubmit(e) {
     e.preventDefault();
 
+    document.getElementById('errorLabel').innerText = "";
+
     const myForm = document.querySelector('#contactForm');
 
     const isValid = myForm.reportValidity();
 
     if (isValid) {
         const btn = document.getElementById('submit-btn');
-        btn.textContent = i18n[currentLang]['f-sent'];
-        btn.style.background = '#4a90a4'; btn.style.color = '#fff';
-        setTimeout(() => {
-            btn.textContent = i18n[currentLang]['f-submit'];
-            btn.style.background = ''; btn.style.color = '';
-        }, 3000);
+        //btn.textContent = i18n[currentLang]['f-sent'];
+        btn.style.background = '#4a90a4';
+        btn.style.color = '#fff';
+        btn.disabled = true;
+        sendEmail(btn);       
     }
 }
 
@@ -355,6 +356,50 @@ function scrollFunction() {
         mybutton.style.display = "none";
     }
 }
+
+emailjs.init({
+    publicKey: '',
+});
+
+function sendEmail(btn) {
+    //debugger;
+    const selectElement = document.querySelector('#service-select');
+    const selectedText = selectElement.options[selectElement.selectedIndex].text;
+
+    const parametros = {
+        name: document.getElementById("nameInput").value,
+        email: document.getElementById("emailInput").value,
+        empresa: document.getElementById("companyInput").value,
+        phone: document.getElementById("telInput").value,
+        service: selectedText,
+        mensaje: document.getElementById("descriptionText").value
+    };
+
+    emailjs.send(
+        "service_p94piyp",
+        "template_zwh89we",
+        parametros
+    )
+        .then(function (response) {            
+            console.log(response);
+
+            document.getElementById('errorLabel').innerText = "Hemos recibido tu mensaje! Nos comunicaremos contigo a la brevedad.";
+
+            btn.style.background = '';
+            btn.style.color = '';
+            btn.disabled = false;
+        })
+        .catch(function (error) {            
+            console.error(error);
+
+            document.getElementById('errorLabel').innerText = error;
+
+            btn.style.background = '';
+            btn.style.color = '';
+            btn.disabled = false;
+        });  
+}
+
 // LIGHTBOX
 (function () {
     const thumbs = document.querySelectorAll('.gallery-thumb');
