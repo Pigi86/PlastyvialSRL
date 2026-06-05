@@ -185,65 +185,7 @@
             <div class="ticker-inner-image" id="ticker-inner-image">
                 <!-- filled by JS -->
             </div>
-        </div>
-
-        <div class="process-steps" style="position:inherit; display:none;">
-            <div class="process-step">
-                <div class="step-name" data-i18n="p2-name">
-                    <img src="Images/vigia.png" />
-                </div>
-            </div>
-            <!--<div class="process-step">
-                <div class="step-name" data-i18n="p3-name">King</div>
-            </div>-->
-            <div class="process-step">
-                <div class="step-name" data-i18n="p4-name">
-                    <img src="Images/prestolite.png" />
-                </div>
-            </div>
-
-            <div class="process-step">
-                <div class="step-name" data-i18n="p1-name">
-                    <img src="Images/TCM.jpg" />
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="step-name" data-i18n="p2-name">
-                    <img src="Images/nichiyu.jpg" />
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="step-name" data-i18n="p3-name">
-                    <img src="Images/komatsu.jpg" />
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="step-name" data-i18n="p4-name">
-                    <img src="Images/shinko.svg" />
-                </div>
-            </div>
-
-            <div class="process-step">
-                <div class="step-name" data-i18n="p2-name">
-                    <img src="Images/toyota.jpg" />
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="step-name" data-i18n="p3-name">
-                    <img src="Images/clark.jpg" />
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="step-name" data-i18n="p4-name">
-                    <img src="Images/nissan.jpg" />
-                </div>
-            </div>
-            <div class="process-step">
-                <div class="step-name" data-i18n="p4-name">
-                    <img src="Images/mitsubishi.jpg" />
-                </div>
-            </div>
-        </div>
+        </div>        
     </section>
 
     <!-- SERVICES -->
@@ -622,25 +564,25 @@
                 <form id="contactForm" action="/submit-data">
                     <div class="form-row">
                         <div class="form-group">
-                            <label data-i18n="f-name">Nombre Completo *</label><input id="nameInput" type="text" data-i18n-ph="ph-name" placeholder="Su nombre completo" required>
+                            <label data-i18n="f-name">Nombre Completo *</label><input id="nameInput" name="name" type="text" data-i18n-ph="ph-name" placeholder="Su nombre completo" required>
                         </div>
                         <div class="form-group">
-                            <label data-i18n="f-company">Empresa *</label><input id="companyInput" type="text" data-i18n-ph="ph-company" placeholder="Su companía" required>
+                            <label data-i18n="f-company">Empresa *</label><input id="companyInput" name="empresa" type="text" data-i18n-ph="ph-company" placeholder="Su companía" required>
                         </div>
                     </div>
                     <br>
                     <div class="form-row">
                         <div class="form-group">
-                            <label data-i18n="f-email">Email *</label><input id="emailInput" type="email" placeholder="info@empresa.com" required>
+                            <label data-i18n="f-email">Email *</label><input id="emailInput" name="email" type="email" placeholder="info@empresa.com" required>
                         </div>
                         <div class="form-group">
-                            <label data-i18n="f-phone">Teléfono *</label><input id="telInput" type="tel" placeholder="+54 ..." required>
+                            <label data-i18n="f-phone">Teléfono *</label><input id="telInput" name="phone" type="tel" placeholder="+54 ..." required>
                         </div>
                     </div>
                     <br>
                     <div class="form-group">
                         <label data-i18n="f-service">Servicio Requerido *</label>
-                        <select id="service-select" required>
+                        <select id="service-select" name="service" required>
                             <option value="" data-i18n="f-select">Seleccione un servicio...</option>
                             <option data-i18n="s1-name">Autoelevadores</option>
                             <option data-i18n="s2-name">Elementos para movimientos de carga</option>
@@ -654,10 +596,15 @@
                     </div>
                     <br>
                     <div class="form-group">
-                        <label data-i18n="f-desc">Descripción</label><textarea id="descriptionText" data-i18n-ph="ph-desc" placeholder="Describa aqui lo que necesite..."></textarea>
+                        <label data-i18n="f-desc">Descripción</label><textarea id="descriptionText" name="mensaje" data-i18n-ph="ph-desc" placeholder="Describa aqui lo que necesite..."></textarea>
                     </div>
                     <br>
                     <button type="submit" class="form-submit" id="submit-btn" onclick="handleSubmit(event)" data-i18n="f-submit">Enviar Mensaje →</button>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        <label id="errorLabel" data-i18n="f-desc"></label>
+                    </div>
                 </form>
             </div>
         </div>
@@ -708,6 +655,7 @@
 
     <div class="menu-overlay" id="menuOverlay"></div>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="Script.js"></script>
 </body>
 </html>
