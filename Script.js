@@ -250,10 +250,12 @@ window.addEventListener('scroll', () => {
     document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.06)' : 'none';
 });
 
+const errorLabel = document.getElementById('errorLabel');
+
 function handleSubmit(e) {
     e.preventDefault();
 
-    document.getElementById('errorLabel').innerText = "";
+    errorLabel.innerText = "";
 
     const myForm = document.querySelector('#contactForm');
 
@@ -383,7 +385,7 @@ function sendEmail(btn) {
         .then(function (response) {            
             console.log(response);
 
-            document.getElementById('errorLabel').innerText = "Hemos recibido tu mensaje! Nos comunicaremos contigo a la brevedad.";
+            errorLabel.innerText = "Hemos recibido tu mensaje! Nos comunicaremos contigo a la brevedad.";
 
             btn.style.background = '';
             btn.style.color = '';
@@ -392,7 +394,7 @@ function sendEmail(btn) {
         .catch(function (error) {            
             console.error(error);
 
-            document.getElementById('errorLabel').innerText = error;
+            errorLabel.innerText = error;
 
             btn.style.background = '';
             btn.style.color = '';
