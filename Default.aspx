@@ -1,50 +1,83 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PlastyvialWebApplication.Default" %>
 
 <!DOCTYPE html>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Plastyvial S.R.L</title>
+    <title>Plastyvial S.R.L.</title>
     <link href="Styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="Images/favicon.ico">
 </head>
 <body>
     <!-- NAV -->
     <nav>
-        <a class="logo" href="#">
+        <a class="logo" href="#home">
             <div class="logo-mark"></div>
             <div class="logo-text">
-                <span class="logo-name">Plastyvial</span>
-                <span class="logo-sub" data-i18n="logo-sub">S.R.L. — Ingeniería Civil</span>
+                <span class="logo-name">Plastyvial S.R.L.</span>
+                <span class="logo-sub" data-i18n="logo-sub">— Taller Mecánico Integral</span>
             </div>
         </a>
         <div class="nav-right">
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                ☰
+            </div>
             <ul class="nav-links">
-                <li><a href="#about" data-i18n="nav-about">Nosotros</a></li>
-                <li><a href="#services" data-i18n="nav-services">Servicios</a></li>
-                <li><a href="#projects" data-i18n="nav-projects">Proyectos</a></li>
+                <li><a href="#home" data-i18n="nav-about" class="inicio">Inicio</a></li>
+                <li class="has-submenu">
+                    <a href="#" data-i18n="nav-about">Nosotros</a>
+                    <ul class="submenu" aria-label="Submenu Confian">
+                        <li><a href="#about" data-i18n="nav-about">Quiénes Somos</a></li>
+                        <li><a href="#confian">Nuestros Clientes</a></li>
+                        <li><a href="#comoTrabajamos">Como Trabajamos</a></li>
+                        <li><a href="#why">Nuestras Cualidades</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" data-i18n="nav-services">Servicios</a>
+                    <ul class="submenu" aria-label="Submenu Servicios">
+                        <li><a href="#services" data-i18n="nav-services">Nuestros Servicios</a></li>
+                        <li><a href="#autoelevadores">Autoelevadores</a></li>
+                        <li><a href="#camiones">Camiones</a></li>
+                        <li><a href="#capacitacion">Capacitaciones</a></li>
+                    </ul>
+                </li>
+                <li class="has-submenu">
+                    <a href="#" data-i18n="nav-projects">Productos</a>
+                    <ul class="submenu" aria-label="Submenu Productos">
+                        <li><a href="#projects" data-i18n="nav-projects">Nuestros Productos</a></li>
+                        <li><a href="#gallery">Galería de Productos</a></li>
+                    </ul>
+                </li>
                 <li><a href="#contact" class="nav-cta" data-i18n="nav-contact">Contacto</a></li>
             </ul>
-           <%-- <div class="lang-switcher">
+            <!--<div class="lang-switcher">
                 <button class="lang-btn active" onclick="setLang('es')">ES</button>
                 <span class="lang-sep">|</span>
                 <button class="lang-btn" onclick="setLang('en')">EN</button>
-            </div>--%>
+            </div>-->
         </div>
     </nav>
+
+    <a href="#toHome" id="backToTopBtn" style="display:none;" class="back-to-top">↑</a>
+
+    <div id="toHome"></div>
 
     <!-- HERO -->
     <section class="hero" id="home">
         <div class="hero-left">
             <div class="hero-eyebrow">
                 <span></span>
-                <p data-i18n="hero-eyebrow">Ingeniería Civil e Infraestructura</p>
+                <p data-i18n="hero-eyebrow">Servicio Técnico de Mantenimiento</p>
             </div>
-            <h1 class="hero-title" data-i18n="hero-title">Construyendo la <em>infraestructura</em> del mañana</h1>
-            <p class="hero-desc" data-i18n="hero-desc">Plastyvial S.R.L. delivers precision-engineered civil infrastructure solutions — from roads and bridges to hydraulic systems — with a commitment to quality, safety, and lasting results.</p>
+            <h1 class="hero-title" data-i18n="hero-title">Manejando la confianza, <em>reparando</em> con excelencia.</h1>
+            <p class="hero-desc" data-i18n="hero-desc">Desde el 2003 Plastyvial posee las certificaciones de las Normas Iram 9001 y 14000. Mantenimiento preventivo y correctivo. Controlamos y mantenemos su flota.</p>
             <div class="hero-actions">
-                <a href="#contact" class="btn-primary" data-i18n="hero-cta1">Solicitar Presupuesto</a>
-                <a href="#projects" class="btn-outline" data-i18n="hero-cta2">Ver Proyectos →</a>
+                <a href="#contact" id="solicitarBtn" class="btn-primary" data-i18n="hero-cta1">Solicitar Presupuesto</a>
+                <a href="#projects" id="verProdBtn" class="btn-outline" data-i18n="hero-cta2">Ver Productos →</a>
             </div>
         </div>
         <div class="hero-right">
@@ -55,7 +88,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-num">140+</div>
-                    <div class="stat-label" data-i18n="stat2">Proyectos Completados</div>
+                    <div class="stat-label" data-i18n="stat2">Productos</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-num">100%</div>
@@ -63,25 +96,18 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-num">35+</div>
-                    <div class="stat-label" data-i18n="stat4">Ingenieros Expertos</div>
+                    <div class="stat-label" data-i18n="stat4">Mecánicos Expertos</div>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="blueprint-bg"></div>
                 <div class="blueprint-text">
-                    <strong>Est. 2006</strong>
-                    <span data-i18n="hero-visual-text">Construyendo el futuro de Argentina, proyecto a proyecto</span>
+                    <strong>Est. 2003</strong>
+                    <span data-i18n="hero-visual-text">Dedicado a la reparación y mantenimiento de Maquinaria Vial y Equipos de Izaje</span>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- TICKER -->
-    <div class="ticker">
-        <div class="ticker-inner" id="ticker-inner">
-            <!-- filled by JS -->
-        </div>
-    </div>
 
     <!-- ABOUT -->
     <section class="about" id="about">
@@ -89,32 +115,26 @@
             <div class="about-image">
                 <div class="about-img-box">
                     <div class="blueprint-bg"></div>
-                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" style="opacity: 0.2; z-index: 1">
-                        <rect x="10" y="60" width="100" height="8" fill="#4a90a4" />
-                        <rect x="20" y="40" width="80" height="4" fill="#c8a84b" />
-                        <circle cx="60" cy="30" r="16" stroke="#4a90a4" stroke-width="3" fill="none" />
-                        <line x1="60" y1="14" x2="60" y2="110" stroke="#4a90a4" stroke-width="1.5" />
-                        <rect x="30" y="68" width="20" height="30" fill="#1e3a4f" />
-                        <rect x="70" y="68" width="20" height="30" fill="#1e3a4f" />
-                    </svg>
+                    <h1 style="padding:50px;text-align:center" class="hero-title" data-i18n="hero-title">Representante Oficial Autoelevadores <em>KING</em></h1>
                     <div class="about-img-accent"></div>
                 </div>
-                <div class="about-badge">
+                <!--<div class="about-badge">
                     <div class="about-badge-icon">🏗️</div>
                     <div class="about-badge-text">
                         <p data-i18n="badge-label">Certificado por</p>
                         <strong>ISO 9001:2015</strong>
                     </div>
-                </div>
+                </div>-->
             </div>
             <div class="about-content">
-                <div class="section-label"><span></span>
+                <div class="section-label">
+                    <span></span>
                     <p data-i18n="about-label">Quiénes Somos</p>
                 </div>
-                <h2 class="section-title" data-i18n="about-title">Empresa especializada en Servicio Tecnico de Mantenimiento</h2>
-                <p class="section-desc" data-i18n="about-p1">Cuando en una empresa, sus equipos operativos, destinados al movimiento de cargas y mercaderías, ¡llegan a situaciones limites o más aun finales!...</p>
+                <h2 class="section-title" data-i18n="about-title">Empresa especializada en Servicio Técnico de Mantenimiento</h2>
+                <p class="section-desc" data-i18n="about-p1">Cuando en una empresa, sus equipos operativos, destinados al movimiento de cargas y mercaderías, llegan a situaciones limites o más aun finales!...</p>
                 <p class="section-desc" data-i18n="about-p2">Debe pensarse seriamente, en la necesidad de introducir un sistema de mantenimiento preventivo que permita corregir oportuna y anticipadamente el desarrollo de las anormalidades incipientes.</p>
-                <p class="section-desc" data-i18n="about-p2">Nuestos Objetivos:</p>
+                <p class="section-desc" data-i18n="about-p2">Nuestros Objetivos:</p>
                 <div class="about-features">
                     <div class="feature-item">
                         <div class="feature-dot"></div>
@@ -145,176 +165,304 @@
         </div>
     </section>
 
+    <!-- PROCESS -->
+    <section class="process" id="confian">
+        <div class="section-label">
+            <span></span>
+            <p data-i18n="proc-label">Nuestro clientes</p>
+        </div>
+        <h2 class="section-title" data-i18n="about-title">Empresas que confían en nuestros productos y servicios</h2>
+        <div style="text-align:center;">
+            <img style="width:30%;" src="Images/Marcas/cocacola-logo.jpeg" />
+        </div>
+        <br><br>
+        <div class="section-label">
+            <span></span>
+            <p data-i18n="proc-label">Nuetras marcas</p>
+        </div>
+        <h2 class="section-title" data-i18n="about-title">Las marcas con las cuales trabajamos</h2>
+
+        <!-- TICKER -->
+        <div class="tickerImage">
+            <div class="ticker-inner-image" id="ticker-inner-image">
+                <!-- filled by JS -->
+            </div>
+        </div>        
+    </section>
+
     <!-- SERVICES -->
     <section class="services" id="services">
         <div class="services-header">
             <div>
-                <div class="section-label"><span></span>
+                <div class="section-label">
+                    <span></span>
                     <p data-i18n="srv-label">Qué Hacemos</p>
                 </div>
-                <h2 class="section-title" data-i18n="srv-title">Servicios de ingeniería civil</h2>
+                <h2 class="section-title" data-i18n="srv-title">Nuestros Servicios</h2>
+                <p class="section-desc" data-i18n="srv-desc">Somos una empresa especializada en servicios técnicos de mantenimiento.</p>
             </div>
-            <p class="section-desc" style="max-width: 300px; font-size: 0.9rem" data-i18n="srv-desc">Desde la planificación inicial hasta la entrega final, cubrimos todo el ámbito de la infraestructura civil.</p>
         </div>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-num">01</div>
                 <div class="service-icon">
-                    <svg viewBox="0 0 36 36" fill="none">
-                        <path d="M4 28 L18 10 L32 28" stroke="#0d1f2d" stroke-width="2" stroke-linejoin="round" />
-                        <rect x="12" y="20" width="12" height="8" stroke="#c8a84b" stroke-width="2" />
-                        <line x1="4" y1="28" x2="32" y2="28" stroke="#0d1f2d" stroke-width="2" />
-                    </svg></div>
-                <div class="service-name" data-i18n="s1-name">Construcción de carreteras y autopistas</div>
-                <p class="service-desc" data-i18n="s1-desc">Diseño y construcción de carreteras pavimentadas, autopistas y vías de acceso, incluyendo movimientos de tierra, pavimentación, drenaje y señalización.</p>
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                        <path d="M2 17H16V18H2V17Z" fill="#0d1f2d" />
+                        <path d="M14 6H17V17H14V6Z" fill="#000000" />
+                        <path d="M4 14H14V17H4V14Z" fill="#c8a84b" />
+                        <path d="M2 12V14H14V12H2Z" fill="#0d1f2d" />
+                        <path d="M17 12V17H19V12H17Z" fill="#c8a84b" />
+                        <circle cx="5" cy="18" r="1.5" fill="#000000" />
+                        <circle cx="13" cy="18" r="1.5" fill="#000000" />
+                    </svg>
+                </div>
+                <div class="service-name" data-i18n="s1-name">Autoelevadores</div>
+                <p class="service-desc" data-i18n="s1-desc">Servicio de mantenimiento preventivo y correctivo programado. Atención de flotas bajo análisis operativos y costos. Supervisión técnica permanente las 24 horas.</p>
             </div>
             <div class="service-card">
                 <div class="service-num">02</div>
                 <div class="service-icon">
-                    <svg viewBox="0 0 36 36" fill="none">
-                        <rect x="2" y="24" width="32" height="4" stroke="#0d1f2d" stroke-width="2" />
-                        <path d="M6 24 Q18 8 30 24" stroke="#c8a84b" stroke-width="2" fill="none" />
-                        <line x1="12" y1="24" x2="12" y2="18" stroke="#0d1f2d" stroke-width="1.5" />
-                        <line x1="24" y1="24" x2="24" y2="18" stroke="#0d1f2d" stroke-width="1.5" />
-                    </svg></div>
-                <div class="service-name" data-i18n="s2-name">Puentes y estructuras</div>
-                <p class="service-desc" data-i18n="s2-desc">Ingeniería y construcción de puentes vehiculares y peatonales, pasos elevados, muros de contención y obras estructurales.</p>
+                    <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://w3.org">
+                        <rect x="0" y="340" width="400" height="60" fill="#0d1f2d" />
+                        <rect x="150" y="100" width="120" height="30" fill="#c8a84b" rx="4" />
+                        <rect x="160" y="40" width="100" height="60" fill="#c8a84b" rx="4" />
+                        <rect x="80" y="240" width="80" height="100" fill="#0d1f2d" rx="5" />
+                        <rect x="130" y="10" width="20" height="230" fill="#0d1f2d" />
+                        <rect x="140" y="90" width="30" height="50" fill="#c8a84b" />
+                        <rect x="150" y="110" width="30" height="10" fill="#0d1f2d" />
+                        <circle cx="100" cy="320" r="20" fill="#000000" />
+                        <circle cx="100" cy="320" r="8" fill="#e0e0e0" />
+                        <circle cx="150" cy="320" r="20" fill="#000000" />
+                        <circle cx="150" cy="320" r="8" fill="#e0e0e0" />
+                        <path d="M 80 250 L 40 210" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+                        <rect x="30" y="190" width="20" height="30" fill="#424242" rx="3" />
+                    </svg>
+                </div>
+                <div class="service-name" data-i18n="s2-name">Apiladoras Eléctricas</div>
+                <p class="service-desc" data-i18n="s2-desc">Diverso parque de apiladoras eléctricas en stock.</p>
             </div>
             <div class="service-card">
                 <div class="service-num">03</div>
                 <div class="service-icon">
-                    <svg viewBox="0 0 36 36" fill="none">
-                        <path d="M6 30 Q6 12 18 10 Q30 12 30 30" stroke="#0d1f2d" stroke-width="2" fill="none" />
-                        <line x1="18" y1="10" x2="18" y2="30" stroke="#c8a84b" stroke-width="1.5" stroke-dasharray="3,2" />
-                        <ellipse cx="18" cy="30" rx="12" ry="3" stroke="#0d1f2d" stroke-width="1.5" />
-                    </svg></div>
-                <div class="service-name" data-i18n="s3-name">Obras Hidráulicas</div>
-                <p class="service-desc" data-i18n="s3-desc">Canales, alcantarillas, sistemas de drenaje pluvial, presas e infraestructura de contención de agua para uso agrícola y urbano.</p>
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                    </svg>
+                </div>
+                <div class="service-name" data-i18n="s3-name">Repuestos</div>
+                <p class="service-desc" data-i18n="s3-desc">Comercializacos una amplia gama de repuestos para autoelevadores de todas las marcas. Comercialización y distribución de baterías vehiculares y de tracción marca Prestolite. Asesoramiento técnico.</p>
             </div>
             <div class="service-card">
                 <div class="service-num">04</div>
                 <div class="service-icon">
-                    <svg viewBox="0 0 36 36" fill="none">
-                        <rect x="4" y="14" width="28" height="18" stroke="#0d1f2d" stroke-width="2" />
-                        <path d="M4 14 L18 4 L32 14" stroke="#c8a84b" stroke-width="2" />
-                        <rect x="14" y="22" width="8" height="10" stroke="#0d1f2d" stroke-width="1.5" />
-                        <line x1="4" y1="20" x2="32" y2="20" stroke="#0d1f2d" stroke-width="1" stroke-dasharray="3,2" />
-                    </svg></div>
-                <div class="service-name" data-i18n="s4-name">Infraestructura Urbana</div>
-                <p class="service-desc" data-i18n="s4-desc">Aceras, plazas, alumbrado público, servicios subterráneos y proyectos de renovación urbana para municipios y provincias.</p>
+                    <svg width="100" height="60" viewBox="0 0 100 60" xmlns="http://w3.org">
+                        <rect x="5" y="10" width="60" height="35" rx="2" fill="#0d1f2d" />
+                        <path d="M65 20 L85 20 Q90 20 90 25 L90 45 L65 45 Z" fill="#c8a84b" />
+                        <rect x="70" y="25" width="12" height="10" rx="1" fill="#c8a84b" />
+                        <circle cx="20" cy="48" r="7" fill="#0d1f2d" />
+                        <circle cx="75" cy="48" r="7" fill="#0d1f2d" />
+                        <circle cx="20" cy="48" r="3" fill="#0d1f2d" />
+                        <circle cx="75" cy="48" r="3" fill="#0d1f2d" />
+                    </svg>
+                </div>
+                <div class="service-name" data-i18n="s4-name">Camiones</div>
+                <p class="service-desc" data-i18n="s4-desc">Servicio de mantenimiento preventivo y correctivo bajo programas fundados en kilómetros recorridos. Supervisión técnica permanente. Reparaciones correctivas en situ y/o taller central.</p>
             </div>
             <div class="service-card">
                 <div class="service-num">05</div>
                 <div class="service-icon">
-                    <svg viewBox="0 0 36 36" fill="none">
-                        <circle cx="18" cy="18" r="12" stroke="#0d1f2d" stroke-width="2" />
-                        <circle cx="18" cy="18" r="6" stroke="#c8a84b" stroke-width="2" />
-                        <line x1="18" y1="6" x2="18" y2="2" stroke="#0d1f2d" stroke-width="2" />
-                        <line x1="18" y1="30" x2="18" y2="34" stroke="#0d1f2d" stroke-width="2" />
-                        <line x1="6" y1="18" x2="2" y2="18" stroke="#0d1f2d" stroke-width="2" />
-                        <line x1="30" y1="18" x2="34" y2="18" stroke="#0d1f2d" stroke-width="2" />
-                    </svg></div>
-                <div class="service-name" data-i18n="s5-name">Estudios Geotécnicos</div>
-                <p class="service-desc" data-i18n="s5-desc">Análisis del suelo, diseño de cimientos y evaluación del terreno para garantizar la integridad estructural y el cumplimiento de la normativa.</p>
+                    <svg width="250" height="300" viewBox="0 0 250 300">
+                        <rect x="20" y="240" width="80" height="40" fill="#c8a84b" rx="5" />
+                        <circle cx="40" cy="280" r="15" fill="#0d1f2d" />
+                        <circle cx="85" cy="280" r="15" fill="#0d1f2d" />
+                        <g class="plataforma">
+                            <line x1="60" y1="240" x2="120" y2="150" class="cilindro-hidraulico" />
+                            <line x1="120" y1="150" x2="150" y2="150" class="cilindro-hidraulico" stroke-dasharray="4 4" />
+                            <line x1="40" y1="240" x2="160" y2="150" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
+                            <line x1="160" y1="240" x2="40" y2="150" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
+
+                            <line x1="40" y1="170" x2="160" y2="80" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
+                            <line x1="160" y1="170" x2="40" y2="80" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
+
+                            <rect x="10" y="50" width="180" height="30" fill="#0d1f2d" rx="4" />
+                            <rect x="20" y="60" width="40" height="20" fill="#c8a84b" />
+                            <rect x="70" y="60" width="40" height="20" fill="#c8a84b" />
+                            <rect x="120" y="60" width="40" height="20" fill="#c8a84b" />
+                        </g>
+                    </svg>
+                </div>
+                <div class="service-name" data-i18n="s5-name">Hidroelevadores e Hidrogruas</div>
+                <p class="service-desc" data-i18n="s5-desc">Especialistas en marcas mundialmente conocidas. Reparamos motores hidráulicos de giro y arrollamiento-coronas sin fin. Desmontaje y montaje de equipos hidroelevadores e hidrogruas.</p>
             </div>
             <div class="service-card">
                 <div class="service-num">06</div>
                 <div class="service-icon">
-                    <svg viewBox="0 0 36 36" fill="none">
-                        <path d="M8 28 L8 16 L18 8 L28 16 L28 28" stroke="#0d1f2d" stroke-width="2" stroke-linejoin="round" />
-                        <path d="M4 28 L32 28" stroke="#0d1f2d" stroke-width="2" />
-                        <path d="M12 18 Q18 14 24 18" stroke="#c8a84b" stroke-width="1.5" fill="none" />
-                        <circle cx="18" cy="22" r="4" stroke="#0d1f2d" stroke-width="1.5" />
-                    </svg></div>
-                <div class="service-name" data-i18n="s6-name">Gestión de Proyectos</div>
-                <p class="service-desc" data-i18n="s6-desc">Supervisión integral de proyectos, elaboración de presupuestos, planificación y control de calidad tanto para licitaciones públicas como para contratos privados.</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 64 64" fill="none">
+                        <!-- Birrete -->
+                        <path d="M32 14L10 24L32 34L54 24L32 14Z" fill="#0d1f2d" />
+                        <!-- Base del birrete -->
+                        <path d="M18 29V38C18 43 24 47 32 47C40 47 46 43 46 38V29" fill="#c8a84b" />
+
+                        <!-- Borla -->
+                        <path d="M54 24V36" stroke="#c8a84b" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="54" cy="38" r="2.5" fill="#c8a84b" />
+                        <!-- Libro -->
+                        <rect x="22" y="42" width="20" height="10" rx="2" fill="#0d1f2d" />
+                        <line x1="32" y1="42" x2="32" y2="52" stroke="#FFFFFF" stroke-width="1.5" />
+                    </svg>
+                </div>
+                <div class="service-name" data-i18n="s6-name">Capacitación</div>
+                <p class="service-desc" data-i18n="s6-desc">Dictado de cursos de capacitación para operadores de autoelevadores "Manejo de Seguridad". Curso destinado a personal de conductores y personal afectado a las tareas de movimiento de cargas.</p>
             </div>
         </div>
     </section>
 
-    <!-- PROCESS -->
-    <section class="process">
-        <div class="section-label"><span></span>
-            <p data-i18n="proc-label">Cómo Trabajamos</p>
+    <!-- AUTOELEVADORES -->
+    <section class="hero" id="autoelevadores" style="display:none;">
+        <div class="hero-left">
+            <div class="hero-eyebrow">
+                <span></span>
+                <p data-i18n="hero-eyebrow">Nuestros Servicios</p>
+            </div>
+            <h2 class="hero-title" data-i18n="srv-title">Autoelevadores</h2>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Servicio de mantenimiento preventivo y correctivo programado.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Atención de flotas bajo análisis operativos y costos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Supervisión técnica permantente. Atención de 24 horas.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Diagramación de servicios bajo sistema Gantt.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Reparaciones correctivas en situ y/o taller central.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Amplio stock de repuestos en todas las marcas.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Atención técnica sobre autoelevadores eléctricos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Capacitación de operadores mediante dictados de cursos a través de profesionales especializados y certificados.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Adecuación de los equipos a las normas de seguridad vigente -art-.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Provisión y colocación de adimentos.</p>
         </div>
-        <h2 class="section-title" data-i18n="proc-title">Nuestro proceso constructivo</h2>
-        <p class="section-desc" data-i18n="proc-desc">Una metodología estructurada y transparente que garantiza que cada proyecto se entregue a tiempo, dentro del presupuesto y esté diseñado para perdurar.</p>
+        <div class="hero-right">
+            <img src="Images/autoelevador.jpg" />
+        </div>
+    </section>
+
+    <!-- CAMIONES -->
+    <section class="hero" id="camiones" style="display:none;">
+        <div class="hero-left">
+            <img src="Images/camion.jpg" />
+        </div>
+        <div class="hero-right">
+            <div class="hero-eyebrow">
+                <span></span>
+                <p data-i18n="srv-label">Nuestros Servicios</p>
+            </div>
+            <h2 class="hero-title" data-i18n="srv-title" style="color:black !important;">Camiones</h2>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Servicio de mantenimiento preventivo y correctivo bajo programas fundados en kilómetros recorridos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Supervisión técnica permantente las 24 horas.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Reparaciones correctivas en situ y/o taller central.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Prestaciones de taller terciarizado.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Amplio stock de repuestos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Atención de emergencias operativas.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Reparación, reformas y diseños de cajas de carga, chasis y cabinas.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Reparaciones de compuestos de fibra.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Construcción de sistemas de coberturas para cajas de carga.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Construcción, corte y plegado de chapas de hierro y aluminio para parantes, largueros, encadenados, pisos, puertas traseras y laterales. Soldaduras de aluminio.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Reparación de frenos completos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Reparación de embragues simples y bidiscos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Reparación de tren delantero y trasero.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Chapa y pintura integral.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Repotenciación de motores térmicos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Frenos de aire.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Colocación de calibradores neumáaticos, protectores de motros, tacografos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Atención de flotas.</p>
+        </div>
+    </section>
+
+    <!-- CAPACITACIONES -->
+    <section class="hero" id="capacitacion" style="display:none;">
+        <div class="hero-left">
+            <div class="section-label">
+                <span></span>
+                <p data-i18n="srv-label">Nuestros Servicios</p>
+            </div>
+            <h2 class="hero-title" data-i18n="srv-title">Capacitaciones</h2>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Curso destinado a personal de conductores y personal afectado a las tareas de movimiento de cargas.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Instrucción teórica-presencial e interactiva con filminas-trabajos grupales y proyección de videos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Capacitación a través de intructores e ingenieros en higiene y seguridad. Pruebas de campo y evaluaciones.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Dictado de cursos in situ o en sala.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Modulos de 75 minutos c/u.</p>
+            <br>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc"><em>1.</em> Reconocimiento de equipo.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc"><em>2.</em> Mantenimiento periódico y controles.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc"><em>3.</em> Normas de seguridad y protecciones.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc"><em>4.</em> Desplazamientos, operaciones peligrosas y prácticas de manejo.</p>
+            <br>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Construcción de sistemas de coberturas para cajas de carga.</p>
+        </div>
+        <div class="hero-right" style="width:100%;">
+            <img src="Images/capacitacion.png" />
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="comoTrabajamos">
+        <div class="section-label">
+            <span></span>
+            <p data-i18n="proc-label">Como Trabajamos</p>
+        </div>
+        <h2 class="section-title" data-i18n="proc-title">Nuestro proceso de servicio mecánico</h2>
+        <p class="section-desc" data-i18n="proc-desc">Una metodología profesional y transparente que garantiza diagnósticos precisos, reparaciones confiables y un servicio pensado para prolongar la vida útil de cada vehículo.</p>
         <div class="process-steps">
             <div class="process-step">
                 <div class="step-circle">1</div>
-                <div class="step-name" data-i18n="p1-name">Consulta</div>
-                <p class="step-desc" data-i18n="p1-desc">Nos reunimos con usted para comprender en detalle el alcance, el presupuesto y los objetivos del proyecto.</p>
+                <div class="step-name" data-i18n="p1-name">Recepción y Diagnóstico</div>
+                <p class="step-desc" data-i18n="p1-desc">Evaluamos el estado del vehículo, escuchamos sus necesidades y realizamos un diagnóstico detallado para identificar el problema.</p>
             </div>
             <div class="process-step">
                 <div class="step-circle">2</div>
-                <div class="step-name" data-i18n="p2-name">Ingeniería y Diseño</div>
-                <p class="step-desc" data-i18n="p2-desc">Nuestro equipo elabora planes técnicos completos, especificaciones y evaluaciones ambientales.</p>
+                <div class="step-name" data-i18n="p2-name">Revisión Técnica</div>
+                <p class="step-desc" data-i18n="p2-desc">Nuestro equipo técnico inspecciona cada componente y define la mejor solución utilizando herramientas y tecnología especializada.</p>
             </div>
             <div class="process-step">
                 <div class="step-circle">3</div>
-                <div class="step-name" data-i18n="p3-name">Ejecución</div>
-                <p class="step-desc" data-i18n="p3-desc">La construcción comienza con personal certificado, materiales de calidad y rigurosas normas de seguridad.</p>
+                <div class="step-name" data-i18n="p3-name">Reparación y Mantenimiento</div>
+                <p class="step-desc" data-i18n="p3-desc">Realizamos las reparaciones con repuestos de calidad, mano de obra especializada y estrictos controles de seguridad.</p>
             </div>
             <div class="process-step">
                 <div class="step-circle">4</div>
-                <div class="step-name" data-i18n="p4-name">Entrega y Soporte</div>
-                <p class="step-desc" data-i18n="p4-desc">Inspección final, documentación de entrega y servicios de mantenimiento posteriores al proyecto.</p>
+                <div class="step-name" data-i18n="p4-name">Entrega y Garantía</div>
+                <p class="step-desc" data-i18n="p4-desc">Entregamos el vehículo revisado y listo para circular, brindando asesoramiento y soporte post-servicio para su tranquilidad.</p>
             </div>
         </div>
     </section>
 
     <!-- PROJECTS -->
     <section class="projects" id="projects">
-        <div class="section-label"><span></span>
+        <div class="section-label">
+            <span></span>
             <p data-i18n="proj-label">Nuestro Trabajo</p>
         </div>
-        <h2 class="section-title" data-i18n="proj-title">Proyectos destacados</h2>
-        <p class="section-desc" data-i18n="proj-desc">Una selección de obras de infraestructura civil realizadas en Argentina.</p>
-        <div class="projects-grid">
-            <div class="project-card featured">
-                <div class="project-thumb">
-                    <div class="blueprint-bg"></div>
-                    <span class="project-tag" data-i18n="tag-roads">Caminos</span><span class="project-thumb-label">Ruta Provincial 34 — Rehabilitación y Pavimentación</span></div>
-                <div class="project-info">
-                    <div class="project-name">Ruta Provincial 34 — Rehabilitación y Pavimentación</div>
-                    <div class="project-meta" data-i18n="proj1-meta">42 km · Santiago del Estero · 2023</div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-thumb">
-                    <div class="blueprint-bg"></div>
-                    <span class="project-tag" data-i18n="tag-hydraulics">Hidraulica</span><span class="project-thumb-label">Canal Maestro Norte</span></div>
-                <div class="project-info">
-                    <div class="project-name">Canal Maestro Norte</div>
-                    <div class="project-meta" data-i18n="proj2-meta">Riego · Córdoba · 2022</div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-thumb">
-                    <div class="blueprint-bg"></div>
-                    <span class="project-tag" data-i18n="tag-bridge">Puente</span><span class="project-thumb-label">Puente sobre Río Salado</span></div>
-                <div class="project-info">
-                    <div class="project-name">Puente sobre Río Salado</div>
-                    <div class="project-meta" data-i18n="proj3-meta">80m span · Santa Fe · 2021</div>
-                </div>
-            </div>
-            <div class="project-card">
-                <div class="project-thumb">
-                    <div class="blueprint-bg"></div>
-                    <span class="project-tag" data-i18n="tag-urban">Urban</span><span class="project-thumb-label">Parque Industrial — Accesos Viales</span></div>
-                <div class="project-info">
-                    <div class="project-name">Parque Industrial — Accesos Viales</div>
-                    <div class="project-meta" data-i18n="proj4-meta">La Rioja · 2022</div>
-                </div>
-            </div>
+        <h2 class="section-title" data-i18n="proj-title">Productos destacados</h2>
+        <p class="section-desc" data-i18n="proj-desc">Una selección de nuestros productos seleccionados.</p>
+        <div id="products-grid" class="projects-grid">
+            <!-- Build Products -->
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="section-label">
+            <span></span>
+            <p>Galería</p>
+        </div>
+        <h2 class="section-title">Nuestros Productos</h2>
+        <p class="section-desc">Explore una selección de nuestros productos con imágenes y descripciones.</p>
+        <div id="gallery-grid" class="gallery-grid">
+            <!-- Build Gallery -->
         </div>
     </section>
 
     <!-- WHY -->
-    <section class="why">
+    <section class="why" id="why">
         <div class="why-grid">
             <div>
-                <div class="section-label"><span></span>
+                <div class="section-label">
+                    <span></span>
                     <p data-i18n="why-label">Por Qué Plastyvial</p>
                 </div>
                 <h2 class="section-title" data-i18n="why-title">Las cualidades que nos distinguen</h2>
@@ -322,29 +470,29 @@
                     <div class="why-item">
                         <div class="why-icon">🛡️</div>
                         <div>
-                            <div class="why-item-title" data-i18n="why1-title">Seguridad ante Todo</div>
-                            <p class="why-item-desc" data-i18n="why1-desc">Cultura de seguridad de tolerancia cero con protocolos certificados, capacitación continua y supervisión en tiempo real del sitio..</p>
+                            <div class="why-item-title" data-i18n="why1-title">Servicio y Seguridad Garantizada</div>
+                            <p class="why-item-desc" data-i18n="why1-desc">Compromiso total con la seguridad del vehículo y del cliente, aplicando procedimientos certificados, diagnóstico preciso y capacitación técnica constante.</p>
                         </div>
                     </div>
                     <div class="why-item">
                         <div class="why-icon">📐</div>
                         <div>
-                            <div class="why-item-title" data-i18n="why2-title">Precisión Técnica</div>
-                            <p class="why-item-desc" data-i18n="why2-desc">Cada proyecto está respaldado por un análisis de ingeniería riguroso, diseños certificados y el cumplimiento de las normas nacionales.</p>
+                            <div class="why-item-title" data-i18n="why2-title">Precisión Mecánica</div>
+                            <p class="why-item-desc" data-i18n="why2-desc">Cada reparación y mantenimiento se realiza con herramientas especializadas, tecnología de diagnóstico avanzada y estrictos controles de calidad.</p>
                         </div>
                     </div>
                     <div class="why-item">
                         <div class="why-icon">🤝</div>
                         <div>
-                            <div class="why-item-title" data-i18n="why3-title">Experiencia Pública y Privada</div>
-                            <p class="why-item-desc" data-i18n="why3-desc">Trayectoria comprobada en contratos gubernamentales, licitaciones y proyectos de infraestructura privada en toda Argentina.</p>
+                            <div class="why-item-title" data-i18n="why3-title">Experiencia Multimarca</div>
+                            <p class="why-item-desc" data-i18n="why3-desc">Amplia trayectoria trabajando con vehículos nacionales e importados, ofreciendo soluciones confiables para empresas.</p>
                         </div>
                     </div>
                     <div class="why-item">
                         <div class="why-icon">♻️</div>
                         <div>
-                            <div class="why-item-title" data-i18n="why4-title">Enfoque Sustentable</div>
-                            <p class="why-item-desc" data-i18n="why4-desc">Integramos las mejores prácticas medioambientales en cada proyecto, desde la obtención de materiales hasta la restauración del terreno.</p>
+                            <div class="why-item-title" data-i18n="why4-title">Compromiso Sustentable</div>
+                            <p class="why-item-desc" data-i18n="why4-desc">Incorporamos prácticas responsables en el manejo de residuos, reciclaje de materiales y optimización de recursos para reducir el impacto ambiental.</p>
                         </div>
                     </div>
                 </div>
@@ -360,7 +508,7 @@
                 </div>
                 <div class="why-stat">
                     <div class="why-stat-num">35+</div>
-                    <div class="why-stat-label" data-i18n="ws3">Ingeniería</div>
+                    <div class="why-stat-label" data-i18n="ws3">Mecánica</div>
                 </div>
                 <div class="why-stat">
                     <div class="why-stat-num">0</div>
@@ -372,11 +520,12 @@
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
-        <div class="section-label"><span></span>
+        <div class="section-label">
+            <span></span>
             <p data-i18n="ct-label">Contáctenos</p>
         </div>
-        <h2 class="section-title" data-i18n="ct-title">Construyamos algo juntos</h2>
-        <p class="section-desc" data-i18n="ct-desc">Cuéntanos sobre tu proyecto y te responderemos en un plazo de 24 horas con una evaluación preliminar.</p>
+        <h2 class="section-title" data-i18n="ct-title">Mantenemos tu flota en movimiento</h2>
+        <p class="section-desc" data-i18n="ct-desc">Cuéntanos cuales de nuestros servicios necesitás y te responderemos en un plazo de 24 horas con una evaluación preliminar y la mejor solución.</p>
         <div class="contact-grid">
             <div class="contact-info">
                 <div class="contact-item">
@@ -409,40 +558,66 @@
                         <div class="contact-item-value" data-i18n="ci4-val">Lunes – Viernes, 8:00 am – 6:00 pm</div>
                     </div>
                 </div>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.19810423793!2d-58.43722858831118!3d-34.75060217278899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccd8a23ec27c3%3A0x95fec0489efa0769!2sPres.%20Juan%20Domingo%20Per%C3%B3n%201468%2C%20B1832EYO%20Lomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1779909588683!5m2!1ses!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
             <div class="contact-form">
-                <div class="form-row">
+                <form id="contactForm" action="/submit-data">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="f-name">Nombre Completo *</label><input id="nameInput" name="name" type="text" data-i18n-ph="ph-name" placeholder="Su nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="f-company">Empresa *</label><input id="companyInput" name="empresa" type="text" data-i18n-ph="ph-company" placeholder="Su companía" required>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-i18n="f-email">Email *</label><input id="emailInput" name="email" type="email" placeholder="info@empresa.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-i18n="f-phone">Teléfono *</label><input id="telInput" name="phone" type="tel" placeholder="+54 ..." required>
+                        </div>
+                    </div>
+                    <br>
                     <div class="form-group">
-                        <label data-i18n="f-name">Nombre Completo</label><input type="text" data-i18n-ph="ph-name" placeholder="Juan Perez"></div>
+                        <label data-i18n="f-service">Servicio Requerido *</label>
+                        <select id="service-select" name="service" required>
+                            <option value="" data-i18n="f-select">Seleccione un servicio...</option>
+                            <option data-i18n="s1-name">Autoelevadores</option>
+                            <option data-i18n="s2-name">Elementos para movimientos de carga</option>
+                            <option data-i18n="s3-name">Apiladoras Eléctricas</option>
+                            <option data-i18n="s4-name">Autoelevadores con Motor Termico</option>
+                            <option data-i18n="s5-name">Repuestos</option>
+                            <option data-i18n="s6-name">Camiones</option>
+                            <option data-i18n="s7-name">Hidroelevadores e Hidrogruas</option>
+                            <option data-i18n="f-other">Otro</option>
+                        </select>
+                    </div>
+                    <br>
                     <div class="form-group">
-                        <label data-i18n="f-company">Empresa</label><input type="text" data-i18n-ph="ph-company" placeholder="Tu companía"></div>
-                </div>
-                <div class="form-row">
+                        <label data-i18n="f-desc">Descripción</label><textarea id="descriptionText" name="mensaje" data-i18n-ph="ph-desc" placeholder="Describa aqui lo que necesite..."></textarea>
+                    </div>
+                    <br>
+                    <button type="submit" class="form-submit" id="submit-btn" onclick="handleSubmit(event)" data-i18n="f-submit">Enviar Mensaje →</button>
+                    <br>
+                    <br>
                     <div class="form-group">
-                        <label data-i18n="f-email">Correo Electrónico</label><input type="email" placeholder="info@empresa.com"></div>
-                    <div class="form-group">
-                        <label data-i18n="f-phone">Teléfono</label><input type="tel" placeholder="+54 ..."></div>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="f-service">Servicio Requerido</label>
-                    <select id="service-select">
-                        <option value="" data-i18n="f-select">Seleccione un servicio...</option>
-                        <option data-i18n="s1-name">Auto Elevadores</option>
-                        <option data-i18n="s2-name">Elementos para movimientos de carga</option>
-                        <option data-i18n="s3-name">Apiladores Electricas</option>
-                        <option data-i18n="s4-name">Auto Elevadores con Motor Termico</option>
-                        <option data-i18n="s5-name">Repuestos</option>
-                        <option data-i18n="s6-name">Camiones</option>
-                        <option data-i18n="s7-name">Hidroelevadores e Hidrogruas</option>
-                        <option data-i18n="f-other">Otro</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label data-i18n="f-desc">Descripción del Proyecto</label><textarea data-i18n-ph="ph-desc" placeholder="Describa su proyecto — localización, enfoque, tiempo..."></textarea></div>
-                <button class="form-submit" id="submit-btn" onclick="handleSubmit(event)" data-i18n="f-submit">Enviar Mensaje →</button>
+                        <label id="errorLabel" data-i18n="f-desc"></label>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
+
+    <!-- TICKER -->
+    <div class="ticker">
+        <div class="ticker-inner" id="ticker-inner">
+            <!-- filled by JS -->
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -450,206 +625,39 @@
             <div class="logo-mark"></div>
             <div class="logo-text">
                 <span class="logo-name-footer">Plastyvial S.R.L.</span>
-                <span class="logo-sub" data-i18n="logo-sub">S.R.L. — Ingeniería Civil</span>
+                <span class="logo-sub" data-i18n="logo-sub">— Taller Mecánico Integral</span>
             </div>
         </a>
         <div class="footer-links">
+            <a href="#home" data-i18n="nav-about">Inicio</a>
             <a href="#about" data-i18n="nav-about">Nosotros</a>
             <a href="#services" data-i18n="nav-services">Servicios</a>
-            <a href="#projects" data-i18n="nav-projects">Proyectos</a>
+            <a href="#projects" data-i18n="nav-projects">Productos</a>
             <a href="#contact" data-i18n="nav-contact">Contacto</a>
         </div>
-        <div class="footer-copy" data-i18n="footer-copy">© <script>document.write(new Date().getFullYear());</script> Plastyvial S.R.L. Todos los derechos reservados.</div>
+        <div class="footer-social" aria-label="Redes Sociales">
+            <a class="social-link" href="https://www.facebook.com/plastyvialsrl" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a class="social-link" href="https://www.instagram.com/explore/locations/651247944920697/plastyvial-srl/" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a class="social-link" href="https://www.linkedin.com/jobs/view/mecanico-hidr%C3%A1ulica-at-plastyvial-s-r-l-4231860242/" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a class="social-link" href="https://wa.me/541131772512" title="WhatsApp" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+            </a>
+        </div>
+        <div class="footer-copy" data-i18n="footer-copy">
+            ©
+            <script>document.write(new Date().getFullYear());</script> Plastyvial S.R.L. Todos los derechos reservados.
+        </div>
     </footer>
 
-    <script>
-        // ── TRANSLATIONS ──
-        //const i18n = {
-        //    en: {
-        //        'logo-sub': 'S.R.L. — Civil Engineering',
-        //        'nav-about': 'About', 'nav-services': 'Services', 'nav-projects': 'Projects', 'nav-contact': 'Contact Us',
-        //        'hero-eyebrow': 'Ingeniería Civil e Infraestructura',
-        //        'hero-title': 'Construyendo la <em>infraestructura</em> del mañana',
-        //        'hero-desc': 'Plastyvial S.R.L. delivers precision-engineered civil infrastructure solutions — from roads and bridges to hydraulic systems — with a commitment to quality, safety, and lasting results.',
-        //        'hero-cta1': 'Solicitar Presupuesto', 'hero-cta2': 'Ver Proyectos →',
-        //        'stat1': 'Años de Experiencia', 'stat2': 'Proyectos Completados', 'stat3': 'Entrega en Tiempo', 'stat4': 'Ingenieros Expertos',
-        //        'hero-visual-text': "Construyendo el futuro de Argentina, proyecto a proyecto",
-        //        'about-label': 'Quiénes Somos',
-        //        'about-title': 'Soluciones de ingeniería respaldadas por la experiencia',
-        //        'about-p1': 'Founded in 2006, Plastyvial S.R.L. has grown into one of Argentina\'s trusted civil infrastructure contractors. We combine technical precision with a deep understanding of local terrain, regulations, and community needs.',
-        //        'about-p2': 'Our multidisciplinary team handles every project phase — from feasibility studies and design to execution and post-construction maintenance — ensuring continuity and accountability at every step.',
-        //        'badge-label': 'Certificado por',
-        //        'feat1': 'Licensed & Certified Professionals', 'feat2': 'Full Project Lifecycle Management',
-        //        'feat3': 'State & Private Sector Expertise', 'feat4': 'Sustainable Construction Practices',
-        //        'feat5': 'Advanced Equipment Fleet', 'feat6': 'Strict Safety Protocols',
-        //        'srv-label': 'Qué Hacemos', 'srv-title': 'Servicios de ingeniería civil',
-        //        'srv-desc': 'From initial planning through final delivery, we cover the full scope of civil infrastructure.',
-        //        's1-name': 'Road & Highway Construction', 's1-desc': 'Design and construction of paved roads, highways, and access routes — including earthworks, paving, drainage, and signage.',
-        //        's2-name': 'Bridges & Structures', 's2-desc': 'Engineering and construction of vehicular and pedestrian bridges, overpasses, retaining walls, and structural works.',
-        //        's3-name': 'Hydraulic Works', 's3-desc': 'Channels, culverts, stormwater systems, dams, and water containment infrastructure for agricultural and urban use.',
-        //        's4-name': 'Urban Infrastructure', 's4-desc': 'Sidewalks, squares, public lighting, underground utilities, and urban renewal projects for municipalities and provinces.',
-        //        's5-name': 'Geotechnical Studies', 's5-desc': 'Soil analysis, foundation design, and terrain assessments to ensure structural integrity and regulatory compliance.',
-        //        's6-name': 'Project Management', 's6-desc': 'End-to-end project supervision, budgeting, scheduling, and quality control for both public tenders and private contracts.',
-        //        'proc-label': 'Cómo Trabajamos', 'proc-title': 'Nuestro proceso constructivo',
-        //        'proc-desc': 'A structured, transparent methodology that keeps every project on time, on budget, and built to last.',
-        //        'p1-name': 'Consultation', 'p1-desc': 'We meet with you to understand scope, budget, and project goals in detail.',
-        //        'p2-name': 'Engineering & Design', 'p2-desc': 'Our team produces complete technical plans, specifications, and environmental assessments.',
-        //        'p3-name': 'Execution', 'p3-desc': 'Construction begins with certified personnel, quality materials, and rigorous safety standards.',
-        //        'p4-name': 'Delivery & Support', 'p4-desc': 'Final inspection, handover documentation, and post-project maintenance services.',
-        //        'proj-label': 'Nuestro Trabajo', 'proj-title': 'Proyectos destacados',
-        //        'proj-desc': 'A selection of civil infrastructure works completed across Argentina.',
-        //        'tag-roads': 'Roads', 'tag-hydraulics': 'Hydraulics', 'tag-bridge': 'Bridge', 'tag-urban': 'Urban',
-        //        'proj1-meta': '42 km · Santiago del Estero · 2023',
-        //        'proj2-meta': 'Irrigation · Córdoba · 2022',
-        //        'proj3-meta': '80m span · Santa Fe · 2021',
-        //        'proj4-meta': 'La Rioja · 2022',
-        //        'why-label': 'Por Qué Plastyvial', 'why-title': 'Las cualidades que nos distinguen',
-        //        'why1-title': 'Seguridad ante Todo', 'why1-desc': 'Zero-tolerance safety culture with certified protocols, ongoing training, and real-time site supervision.',
-        //        'why2-title': 'Precisión Técnica', 'why2-desc': 'Every project is backed by rigorous engineering analysis, certified designs, and compliance with national standards.',
-        //        'why3-title': 'Experiencia Pública y Privada', 'why3-desc': 'Proven track record in government contracts, licitaciones, and private infrastructure projects across Argentina.',
-        //        'why4-title': 'Enfoque Sustentable', 'why4-desc': 'We integrate environmental best practices into every project, from material sourcing to site restoration.',
-        //        'ws1': 'Years Active', 'ws2': 'Works Done', 'ws3': 'Engineers', 'ws4': 'Lost-Time Incidents',
-        //        'ct-label': 'Contáctenos', 'ct-title': "Construyamos algo juntos",
-        //        'ct-desc': "Tell us about your project and we'll get back to you within 24 hours with a preliminary assessment.",
-        //        'ci1-label': 'Oficina', 'ci2-label': 'Teléfono', 'ci3-label': 'Correo Electrónico', 'ci4-label': 'Horario de Atención',
-        //        'ci4-val': 'Mon–Fri, 8:00 am – 6:00 pm',
-        //        'f-name': 'Nombre Completo', 'ph-name': 'John Smith',
-        //        'f-company': 'Empresa', 'ph-company': 'Your organization',
-        //        'f-email': 'Correo Electrónico', 'f-phone': 'Teléfono',
-        //        'f-service': 'Servicio Requerido', 'f-select': 'Seleccione un servicio...',
-        //        'f-other': 'Otro',
-        //        'f-desc': 'Descripción del Proyecto', 'ph-desc': 'Describe your project — location, scope, timeline...',
-        //        'f-submit': 'Enviar Mensaje →', 'f-sent': '✓ Message Sent!',
-        //        'footer-copy': '© 2024 Plastyvial S.R.L. Todos los derechos reservados.',
-        //        'ticker': ['Road Construction', 'Bridge Engineering', 'Hydraulic Systems', 'Urban Infrastructure', 'Structural Works', 'Environmental Projects']
-        //    },
-        //    es: {
-        //        'logo-sub': 'S.R.L. — Ingeniería Civil',
-        //        'nav-about': 'Nosotros', 'nav-services': 'Servicios', 'nav-projects': 'Proyectos', 'nav-contact': 'Contacto',
-        //        'hero-eyebrow': 'Ingeniería Civil e Infraestructura',
-        //        'hero-title': 'Construyendo la <em>infraestructura</em> del mañana',
-        //        'hero-desc': 'Plastyvial S.R.L. ofrece soluciones de infraestructura civil de precisión — desde rutas y puentes hasta sistemas hidráulicos — con un firme compromiso con la calidad, la seguridad y la durabilidad.',
-        //        'hero-cta1': 'Solicitar Presupuesto', 'hero-cta2': 'Ver Proyectos →',
-        //        'stat1': 'Años de Experiencia', 'stat2': 'Proyectos Completados', 'stat3': 'Entrega en Tiempo', 'stat4': 'Ingenieros Expertos',
-        //        'hero-visual-text': 'Construyendo el futuro de Argentina, proyecto a proyecto',
-        //        'about-label': 'Quiénes Somos',
-        //        'about-title': 'Soluciones de ingeniería respaldadas por la experiencia',
-        //        'about-p1': 'Fundada en 2006, Plastyvial S.R.L. se ha consolidado como una de las empresas contratistas de infraestructura civil de mayor confianza en Argentina. Combinamos precisión técnica con un profundo conocimiento del terreno local, la normativa vigente y las necesidades de cada comunidad.',
-        //        'about-p2': 'Nuestro equipo multidisciplinario gestiona cada etapa del proyecto — desde estudios de factibilidad y diseño hasta la ejecución y el mantenimiento post-obra — garantizando continuidad y responsabilidad en cada paso.',
-        //        'badge-label': 'Certificado por',
-        //        'feat1': 'Profesionales Habilitados y Certificados', 'feat2': 'Gestión Integral del Ciclo de Proyecto',
-        //        'feat3': 'Experiencia en Sector Público y Privado', 'feat4': 'Prácticas de Construcción Sustentable',
-        //        'feat5': 'Flota de Equipos de Última Generación', 'feat6': 'Protocolos de Seguridad Estrictos',
-        //        'srv-label': 'Qué Hacemos', 'srv-title': 'Servicios de ingeniería civil',
-        //        'srv-desc': 'Desde la planificación inicial hasta la entrega final, cubrimos todo el alcance de la infraestructura civil.',
-        //        's1-name': 'Construcción de Rutas y Autopistas', 's1-desc': 'Diseño y construcción de rutas pavimentadas, autopistas y accesos viales — incluyendo movimiento de suelos, pavimentación, drenaje y señalización.',
-        //        's2-name': 'Puentes y Estructuras', 's2-desc': 'Ingeniería y construcción de puentes vehiculares y peatonales, pasos a nivel, muros de contención y obras estructurales.',
-        //        's3-name': 'Obras Hidráulicas', 's3-desc': 'Canales, alcantarillas, sistemas de drenaje pluvial, diques e infraestructura de contención hídrica para uso agrícola y urbano.',
-        //        's4-name': 'Infraestructura Urbana', 's4-desc': 'Veredas, plazas, alumbrado público, servicios subterráneos y proyectos de renovación urbana para municipios y provincias.',
-        //        's5-name': 'Estudios Geotécnicos', 's5-desc': 'Análisis de suelos, diseño de fundaciones y evaluación de terrenos para garantizar la integridad estructural y el cumplimiento normativo.',
-        //        's6-name': 'Dirección de Proyectos', 's6-desc': 'Supervisión integral, presupuestación, planificación y control de calidad tanto para licitaciones públicas como contratos privados.',
-        //        'proc-label': 'Cómo Trabajamos', 'proc-title': 'Nuestro proceso constructivo',
-        //        'proc-desc': 'Una metodología estructurada y transparente que mantiene cada proyecto en tiempo, en presupuesto y construido para durar.',
-        //        'p1-name': 'Consulta Inicial', 'p1-desc': 'Nos reunimos con usted para comprender el alcance, el presupuesto y los objetivos del proyecto en detalle.',
-        //        'p2-name': 'Ingeniería y Diseño', 'p2-desc': 'Nuestro equipo elabora planos técnicos completos, especificaciones y evaluaciones ambientales.',
-        //        'p3-name': 'Ejecución', 'p3-desc': 'La obra comienza con personal certificado, materiales de calidad y estrictas normas de seguridad.',
-        //        'p4-name': 'Entrega y Soporte', 'p4-desc': 'Inspección final, documentación de entrega y servicios de mantenimiento post-obra.',
-        //        'proj-label': 'Nuestro Trabajo', 'proj-title': 'Proyectos destacados',
-        //        'proj-desc': 'Una selección de obras de infraestructura civil completadas en todo el país.',
-        //        'tag-roads': 'Rutas', 'tag-hydraulics': 'Hidráulica', 'tag-bridge': 'Puente', 'tag-urban': 'Urbano',
-        //        'proj1-meta': '42 km · Santiago del Estero · 2023',
-        //        'proj2-meta': 'Riego · Córdoba · 2022',
-        //        'proj3-meta': '80m de luz · Santa Fe · 2021',
-        //        'proj4-meta': 'La Rioja · 2022',
-        //        'why-label': 'Por Qué Plastyvial', 'why-title': 'Las cualidades que nos distinguen',
-        //        'why1-title': 'Seguridad ante Todo', 'why1-desc': 'Cultura de tolerancia cero en seguridad, con protocolos certificados, capacitación continua y supervisión en tiempo real.',
-        //        'why2-title': 'Precisión Técnica', 'why2-desc': 'Cada proyecto cuenta con un análisis de ingeniería riguroso, diseños certificados y cumplimiento de estándares nacionales.',
-        //        'why3-title': 'Experiencia Pública y Privada', 'why3-desc': 'Historial comprobado en contratos gubernamentales, licitaciones y proyectos de infraestructura privada en toda Argentina.',
-        //        'why4-title': 'Enfoque Sustentable', 'why4-desc': 'Integramos las mejores prácticas ambientales en cada proyecto, desde el aprovisionamiento de materiales hasta la restauración del sitio.',
-        //        'ws1': 'Años Activos', 'ws2': 'Obras Realizadas', 'ws3': 'Ingenieros', 'ws4': 'Accidentes con Tiempo Perdido',
-        //        'ct-label': 'Contáctenos', 'ct-title': 'Construyamos algo juntos',
-        //        'ct-desc': 'Cuéntenos sobre su proyecto y le responderemos en 24 horas con una evaluación preliminar.',
-        //        'ci1-label': 'Oficina', 'ci2-label': 'Teléfono', 'ci3-label': 'Correo', 'ci4-label': 'Horario de Atención',
-        //        'ci4-val': 'Lun–Vie, 8:00 am – 6:00 pm',
-        //        'f-name': 'Nombre Completo', 'ph-name': 'Juan Pérez',
-        //        'f-company': 'Empresa', 'ph-company': 'Su organización',
-        //        'f-email': 'Correo Electrónico', 'f-phone': 'Teléfono',
-        //        'f-service': 'Servicio Requerido', 'f-select': 'Seleccione un servicio...',
-        //        'f-other': 'Otro',
-        //        'f-desc': 'Descripción del Proyecto', 'ph-desc': 'Describa su proyecto — ubicación, alcance, plazos...',
-        //        'f-submit': 'Enviar Mensaje →', 'f-sent': '✓ ¡Mensaje Enviado!',
-        //        'footer-copy': '© 2024 Plastyvial S.R.L. Todos los derechos reservados.',
-        //        'ticker': ['Construcción Vial', 'Ingeniería de Puentes', 'Obras Hidráulicas', 'Infraestructura Urbana', 'Obras Estructurales', 'Proyectos Ambientales']
-        //    }
-        //};
+    <div class="menu-overlay" id="menuOverlay"></div>
 
-        let currentLang = 'es';
-
-        function buildTicker(lang) {
-            const items = i18n[lang].ticker;
-            const doubled = [...items, ...items];
-            document.getElementById('ticker-inner').innerHTML = doubled.map(t =>
-                `<span class="ticker-item">${t}<span class="ticker-dot"></span></span>`
-            ).join('');
-        }
-
-        function setLang(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-            document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang.toUpperCase()));
-            const t = i18n[lang];
-
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (t[key] !== undefined) el.innerHTML = t[key];
-            });
-
-            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
-                const key = el.getAttribute('data-i18n-ph');
-                if (t[key] !== undefined) el.placeholder = t[key];
-            });
-
-            buildTicker(lang);
-        }
-
-        // Init
-        //setLang('es');
-
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.service-card, .process-step, .project-card, .why-item, .stat-card').forEach(el => {
-            el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(el);
-        });
-
-        window.addEventListener('scroll', () => {
-            document.querySelector('nav').style.boxShadow = window.scrollY > 20 ? '0 2px 20px rgba(0,0,0,0.06)' : 'none';
-        });
-
-        function handleSubmit(e) {
-            e.preventDefault();
-            const btn = document.getElementById('submit-btn');
-            btn.textContent = i18n[currentLang]['f-sent'];
-            btn.style.background = '#4a90a4'; btn.style.color = '#fff';
-            setTimeout(() => {
-                btn.textContent = i18n[currentLang]['f-submit'];
-                btn.style.background = ''; btn.style.color = '';
-            }, 3000);
-        }
-
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                e.preventDefault();
-                const t = document.querySelector(a.getAttribute('href'));
-                if (t) t.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-</script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="Script.js"></script>
 </body>
 </html>
