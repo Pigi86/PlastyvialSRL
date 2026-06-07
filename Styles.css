@@ -224,7 +224,7 @@ nav {
         letter-spacing: 0.04em;
         transition: color 0.2s;
         text-transform: uppercase;
-        padding:10px;
+        padding: 10px;
     }
 
         .nav-links a:hover {
@@ -238,8 +238,8 @@ nav {
     padding: 0.55rem 1.3rem !important;
     border-radius: 3px;
     transition: background 0.2s !important;
-    position:relative;
-    top:7px;
+    position: relative;
+    top: 7px;
 }
 
     .nav-cta:hover {
@@ -251,7 +251,7 @@ nav {
 .hero {
     /*min-height: 100vh;*/
     display: grid;
-    grid-template-columns: 1fr 1fr;    
+    grid-template-columns: 1fr 1fr;
     align-items: stretch;
     /*padding-top: 72px;*/
 }
@@ -590,7 +590,7 @@ nav {
     color: rgba(255,255,255,0.7);
     z-index: 1;
     text-align: center;
-    line-height: 1.6;   
+    line-height: 1.6;
 }
 
     .blueprint-text strong {
@@ -865,6 +865,11 @@ section {
     background: var(--light);
 }
 
+.serviceGridLink {    
+    text-decoration:none;
+    cursor:pointer !important;
+}
+
 .service-card {
     background: var(--white);
     padding: 2.4rem 2rem;
@@ -872,6 +877,7 @@ section {
     overflow: hidden;
     transition: background 0.3s;
     cursor: default;
+    height:100%;
 }
 
     .service-card::before {
@@ -912,6 +918,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    color:black;
 }
 
     .service-icon svg {
@@ -1611,7 +1618,7 @@ section {
     section {
         padding-left: 15px !important;
         padding-right: 15px !important;
-        margin-top:100px !important;
+        margin-top: 100px !important;
     }
 }
 
@@ -1701,7 +1708,7 @@ section {
     }
 
     section {
-        margin-top: 100px !important; 
+        margin-top: 100px !important;
     }
 
     /* OVERLAY */
