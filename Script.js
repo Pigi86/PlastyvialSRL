@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 50);
     }
 
-    const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a, #solicitarBtn, #verProdBtn, .backServices, .serviceGridLink');
+    const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a, #solicitarBtn, #verProdBtn, .backServicesLeft, .backServices, .serviceGridLink');
 
     menuLinks.forEach(link => {
         link.addEventListener("click", function (e) {
