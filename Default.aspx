@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PlastyvialWebApplication.Default" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="PlastyvialWebApplication.Default" %>
 
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -43,6 +43,9 @@
                         <li><a href="#autoelevadores">Autoelevadores</a></li>
                         <li><a href="#camiones">Camiones</a></li>
                         <li><a href="#capacitacion">Capacitaciones</a></li>
+                        <li><a href="#hidraulica">Área Hidráulica</a></li>
+                        <li><a href="#respuestos">Repuestos</a></li>
+                        <li><a href="#apiladores">Apiladores Eléctricos</a></li>
                     </ul>
                 </li>
                 <li class="has-submenu">
@@ -187,7 +190,7 @@
             <div class="ticker-inner-image" id="ticker-inner-image">
                 <!-- filled by JS -->
             </div>
-        </div>        
+        </div>
     </section>
 
     <!-- SERVICES -->
@@ -203,117 +206,129 @@
             </div>
         </div>
         <div class="services-grid">
-            <div class="service-card">
-                <div class="service-num">01</div>
-                <div class="service-icon">
-                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
-                        <path d="M2 17H16V18H2V17Z" fill="#0d1f2d" />
-                        <path d="M14 6H17V17H14V6Z" fill="#000000" />
-                        <path d="M4 14H14V17H4V14Z" fill="#c8a84b" />
-                        <path d="M2 12V14H14V12H2Z" fill="#0d1f2d" />
-                        <path d="M17 12V17H19V12H17Z" fill="#c8a84b" />
-                        <circle cx="5" cy="18" r="1.5" fill="#000000" />
-                        <circle cx="13" cy="18" r="1.5" fill="#000000" />
-                    </svg>
+            <a href="#autoelevadores" class="serviceGridLink">
+                <div class="service-card">
+                    <div class="service-num">01</div>
+                    <div class="service-icon">
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+                            <path d="M2 17H16V18H2V17Z" fill="#0d1f2d" />
+                            <path d="M14 6H17V17H14V6Z" fill="#000000" />
+                            <path d="M4 14H14V17H4V14Z" fill="#c8a84b" />
+                            <path d="M2 12V14H14V12H2Z" fill="#0d1f2d" />
+                            <path d="M17 12V17H19V12H17Z" fill="#c8a84b" />
+                            <circle cx="5" cy="18" r="1.5" fill="#000000" />
+                            <circle cx="13" cy="18" r="1.5" fill="#000000" />
+                        </svg>
+                    </div>
+                    <div class="service-name" data-i18n="s1-name">Autoelevadores</div>
+                    <p class="service-desc" data-i18n="s1-desc">Servicio de mantenimiento preventivo y correctivo programado. Atención de flotas bajo análisis operativos y costos. Supervisión técnica permanente las 24 horas.</p>
                 </div>
-                <div class="service-name" data-i18n="s1-name">Autoelevadores</div>
-                <p class="service-desc" data-i18n="s1-desc">Servicio de mantenimiento preventivo y correctivo programado. Atención de flotas bajo análisis operativos y costos. Supervisión técnica permanente las 24 horas.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-num">02</div>
-                <div class="service-icon">
-                    <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://w3.org">
-                        <rect x="0" y="340" width="400" height="60" fill="#0d1f2d" />
-                        <rect x="150" y="100" width="120" height="30" fill="#c8a84b" rx="4" />
-                        <rect x="160" y="40" width="100" height="60" fill="#c8a84b" rx="4" />
-                        <rect x="80" y="240" width="80" height="100" fill="#0d1f2d" rx="5" />
-                        <rect x="130" y="10" width="20" height="230" fill="#0d1f2d" />
-                        <rect x="140" y="90" width="30" height="50" fill="#c8a84b" />
-                        <rect x="150" y="110" width="30" height="10" fill="#0d1f2d" />
-                        <circle cx="100" cy="320" r="20" fill="#000000" />
-                        <circle cx="100" cy="320" r="8" fill="#e0e0e0" />
-                        <circle cx="150" cy="320" r="20" fill="#000000" />
-                        <circle cx="150" cy="320" r="8" fill="#e0e0e0" />
-                        <path d="M 80 250 L 40 210" stroke="#000000" stroke-width="8" stroke-linecap="round" />
-                        <rect x="30" y="190" width="20" height="30" fill="#424242" rx="3" />
-                    </svg>
+            </a>
+            <a href="#apiladores" class="serviceGridLink">
+                <div class="service-card">
+                    <div class="service-num">02</div>
+                    <div class="service-icon">
+                        <svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://w3.org">
+                            <rect x="0" y="340" width="400" height="60" fill="#0d1f2d" />
+                            <rect x="150" y="100" width="120" height="30" fill="#c8a84b" rx="4" />
+                            <rect x="160" y="40" width="100" height="60" fill="#c8a84b" rx="4" />
+                            <rect x="80" y="240" width="80" height="100" fill="#0d1f2d" rx="5" />
+                            <rect x="130" y="10" width="20" height="230" fill="#0d1f2d" />
+                            <rect x="140" y="90" width="30" height="50" fill="#c8a84b" />
+                            <rect x="150" y="110" width="30" height="10" fill="#0d1f2d" />
+                            <circle cx="100" cy="320" r="20" fill="#000000" />
+                            <circle cx="100" cy="320" r="8" fill="#e0e0e0" />
+                            <circle cx="150" cy="320" r="20" fill="#000000" />
+                            <circle cx="150" cy="320" r="8" fill="#e0e0e0" />
+                            <path d="M 80 250 L 40 210" stroke="#000000" stroke-width="8" stroke-linecap="round" />
+                            <rect x="30" y="190" width="20" height="30" fill="#424242" rx="3" />
+                        </svg>
+                    </div>
+                    <div class="service-name" data-i18n="s2-name">Apiladores Eléctricos</div>
+                    <p class="service-desc" data-i18n="s2-desc">Diverso parque de apiladores eléctricos en stock.</p>
                 </div>
-                <div class="service-name" data-i18n="s2-name">Apiladoras Eléctricas</div>
-                <p class="service-desc" data-i18n="s2-desc">Diverso parque de apiladoras eléctricas en stock.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-num">03</div>
-                <div class="service-icon">
-                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
-                        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
-                    </svg>
+            </a>
+            <a href="#respuestos" class="serviceGridLink">
+                <div class="service-card">
+                    <div class="service-num">03</div>
+                    <div class="service-icon">
+                        <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 15a3 3 0 100-6 3 3 0 000 6z" />
+                            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                        </svg>
+                    </div>
+                    <div class="service-name" data-i18n="s3-name">Repuestos</div>
+                    <p class="service-desc" data-i18n="s3-desc">Comercializacos una amplia gama de repuestos para autoelevadores de todas las marcas. Comercialización y distribución de baterías vehiculares y de tracción marca Prestolite. Asesoramiento técnico.</p>
                 </div>
-                <div class="service-name" data-i18n="s3-name">Repuestos</div>
-                <p class="service-desc" data-i18n="s3-desc">Comercializacos una amplia gama de repuestos para autoelevadores de todas las marcas. Comercialización y distribución de baterías vehiculares y de tracción marca Prestolite. Asesoramiento técnico.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-num">04</div>
-                <div class="service-icon">
-                    <svg width="100" height="60" viewBox="0 0 100 60" xmlns="http://w3.org">
-                        <rect x="5" y="10" width="60" height="35" rx="2" fill="#0d1f2d" />
-                        <path d="M65 20 L85 20 Q90 20 90 25 L90 45 L65 45 Z" fill="#c8a84b" />
-                        <rect x="70" y="25" width="12" height="10" rx="1" fill="#c8a84b" />
-                        <circle cx="20" cy="48" r="7" fill="#0d1f2d" />
-                        <circle cx="75" cy="48" r="7" fill="#0d1f2d" />
-                        <circle cx="20" cy="48" r="3" fill="#0d1f2d" />
-                        <circle cx="75" cy="48" r="3" fill="#0d1f2d" />
-                    </svg>
+            </a>
+            <a href="#camiones" class="serviceGridLink">
+                <div class="service-card">
+                    <div class="service-num">04</div>
+                    <div class="service-icon">
+                        <svg width="100" height="60" viewBox="0 0 100 60" xmlns="http://w3.org">
+                            <rect x="5" y="10" width="60" height="35" rx="2" fill="#0d1f2d" />
+                            <path d="M65 20 L85 20 Q90 20 90 25 L90 45 L65 45 Z" fill="#c8a84b" />
+                            <rect x="70" y="25" width="12" height="10" rx="1" fill="#c8a84b" />
+                            <circle cx="20" cy="48" r="7" fill="#0d1f2d" />
+                            <circle cx="75" cy="48" r="7" fill="#0d1f2d" />
+                            <circle cx="20" cy="48" r="3" fill="#0d1f2d" />
+                            <circle cx="75" cy="48" r="3" fill="#0d1f2d" />
+                        </svg>
+                    </div>
+                    <div class="service-name" data-i18n="s4-name">Camiones</div>
+                    <p class="service-desc" data-i18n="s4-desc">Servicio de mantenimiento preventivo y correctivo bajo programas fundados en kilómetros recorridos. Supervisión técnica permanente. Reparaciones correctivas en situ y/o taller central.</p>
                 </div>
-                <div class="service-name" data-i18n="s4-name">Camiones</div>
-                <p class="service-desc" data-i18n="s4-desc">Servicio de mantenimiento preventivo y correctivo bajo programas fundados en kilómetros recorridos. Supervisión técnica permanente. Reparaciones correctivas en situ y/o taller central.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-num">05</div>
-                <div class="service-icon">
-                    <svg width="250" height="300" viewBox="0 0 250 300">
-                        <rect x="20" y="240" width="80" height="40" fill="#c8a84b" rx="5" />
-                        <circle cx="40" cy="280" r="15" fill="#0d1f2d" />
-                        <circle cx="85" cy="280" r="15" fill="#0d1f2d" />
-                        <g class="plataforma">
-                            <line x1="60" y1="240" x2="120" y2="150" class="cilindro-hidraulico" />
-                            <line x1="120" y1="150" x2="150" y2="150" class="cilindro-hidraulico" stroke-dasharray="4 4" />
-                            <line x1="40" y1="240" x2="160" y2="150" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
-                            <line x1="160" y1="240" x2="40" y2="150" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
+            </a>
+            <a href="#hidraulica" class="serviceGridLink">
+                <div class="service-card">
+                    <div class="service-num">05</div>
+                    <div class="service-icon">
+                        <svg width="250" height="300" viewBox="0 0 250 300">
+                            <rect x="20" y="240" width="80" height="40" fill="#c8a84b" rx="5" />
+                            <circle cx="40" cy="280" r="15" fill="#0d1f2d" />
+                            <circle cx="85" cy="280" r="15" fill="#0d1f2d" />
+                            <g class="plataforma">
+                                <line x1="60" y1="240" x2="120" y2="150" class="cilindro-hidraulico" />
+                                <line x1="120" y1="150" x2="150" y2="150" class="cilindro-hidraulico" stroke-dasharray="4 4" />
+                                <line x1="40" y1="240" x2="160" y2="150" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
+                                <line x1="160" y1="240" x2="40" y2="150" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
 
-                            <line x1="40" y1="170" x2="160" y2="80" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
-                            <line x1="160" y1="170" x2="40" y2="80" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
+                                <line x1="40" y1="170" x2="160" y2="80" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
+                                <line x1="160" y1="170" x2="40" y2="80" stroke="#0d1f2d" stroke-width="8" stroke-linecap="round" />
 
-                            <rect x="10" y="50" width="180" height="30" fill="#0d1f2d" rx="4" />
-                            <rect x="20" y="60" width="40" height="20" fill="#c8a84b" />
-                            <rect x="70" y="60" width="40" height="20" fill="#c8a84b" />
-                            <rect x="120" y="60" width="40" height="20" fill="#c8a84b" />
-                        </g>
-                    </svg>
+                                <rect x="10" y="50" width="180" height="30" fill="#0d1f2d" rx="4" />
+                                <rect x="20" y="60" width="40" height="20" fill="#c8a84b" />
+                                <rect x="70" y="60" width="40" height="20" fill="#c8a84b" />
+                                <rect x="120" y="60" width="40" height="20" fill="#c8a84b" />
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="service-name" data-i18n="s5-name">Hidroelevadores e Hidrogruas</div>
+                    <p class="service-desc" data-i18n="s5-desc">Especialistas en marcas mundialmente conocidas. Reparamos motores hidráulicos de giro y arrollamiento-coronas sin fin. Desmontaje y montaje de equipos hidroelevadores e hidrogruas.</p>
                 </div>
-                <div class="service-name" data-i18n="s5-name">Hidroelevadores e Hidrogruas</div>
-                <p class="service-desc" data-i18n="s5-desc">Especialistas en marcas mundialmente conocidas. Reparamos motores hidráulicos de giro y arrollamiento-coronas sin fin. Desmontaje y montaje de equipos hidroelevadores e hidrogruas.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-num">06</div>
-                <div class="service-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 64 64" fill="none">
-                        <!-- Birrete -->
-                        <path d="M32 14L10 24L32 34L54 24L32 14Z" fill="#0d1f2d" />
-                        <!-- Base del birrete -->
-                        <path d="M18 29V38C18 43 24 47 32 47C40 47 46 43 46 38V29" fill="#c8a84b" />
+            </a>
+            <a href="#capacitacion" class="serviceGridLink">
+                <div class="service-card">
+                    <div class="service-num">06</div>
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 64 64" fill="none">
+                            <!-- Birrete -->
+                            <path d="M32 14L10 24L32 34L54 24L32 14Z" fill="#0d1f2d" />
+                            <!-- Base del birrete -->
+                            <path d="M18 29V38C18 43 24 47 32 47C40 47 46 43 46 38V29" fill="#c8a84b" />
 
-                        <!-- Borla -->
-                        <path d="M54 24V36" stroke="#c8a84b" stroke-width="2" stroke-linecap="round" />
-                        <circle cx="54" cy="38" r="2.5" fill="#c8a84b" />
-                        <!-- Libro -->
-                        <rect x="22" y="42" width="20" height="10" rx="2" fill="#0d1f2d" />
-                        <line x1="32" y1="42" x2="32" y2="52" stroke="#FFFFFF" stroke-width="1.5" />
-                    </svg>
+                            <!-- Borla -->
+                            <path d="M54 24V36" stroke="#c8a84b" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="54" cy="38" r="2.5" fill="#c8a84b" />
+                            <!-- Libro -->
+                            <rect x="22" y="42" width="20" height="10" rx="2" fill="#0d1f2d" />
+                            <line x1="32" y1="42" x2="32" y2="52" stroke="#FFFFFF" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                    <div class="service-name" data-i18n="s6-name">Capacitación</div>
+                    <p class="service-desc" data-i18n="s6-desc">Dictado de cursos de capacitación para operadores de autoelevadores "Manejo de Seguridad". Curso destinado a personal de conductores y personal afectado a las tareas de movimiento de cargas.</p>
                 </div>
-                <div class="service-name" data-i18n="s6-name">Capacitación</div>
-                <p class="service-desc" data-i18n="s6-desc">Dictado de cursos de capacitación para operadores de autoelevadores "Manejo de Seguridad". Curso destinado a personal de conductores y personal afectado a las tareas de movimiento de cargas.</p>
-            </div>
+            </a>
         </div>
     </section>
 
@@ -399,6 +414,64 @@
         </div>
     </section>
 
+    <!-- Hidraulica -->
+    <section class="hero" id="hidraulica" style="display:none;">
+        <div class="hero-left">
+            <img src="Images/prensahidraulica.png" />
+        </div>
+        <div class="hero-right">
+            <div class="hero-eyebrow">
+                <span></span>
+                <p data-i18n="srv-label">Nuestros Servicios</p>
+            </div>
+            <h2 class="hero-title" data-i18n="srv-title" style="color:black !important;">Área Hidráulica</h2>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· En nuestro espíritu de atención al cliente y con el objectivo claro de brindar seguridad en la prestación,</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">  economía y convenios de colaboración simultanea con diversas firmas de la rama industrial, permitiendo de esta</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">  manera incrementar no solo nuestra capacidad edilicia (2000 m2) sino también nuestra capacidad técnica,</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">  ya que podemos ofrecer las siguientes aplicaciones hidráulicas:</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Contrucción de máquinas y dispositivos hidraulicos y mecánicos para pocesos de mecanizados.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Prensas hidráulicas de distintas capacidades y diseños.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Construcción de centrales hidráulicas-máquinas automáticas o semiautomáticas-circuitos de comandos hidráulicos y neumáticos. Mecanismos mecánicos con lógica de RELE o PLC.</p>
+        </div>
+    </section>
+
+    <!-- Respuestos -->
+    <section class="hero" id="respuestos" style="display:none;">
+        <div class="hero-left">
+            <div class="section-label">
+                <span></span>
+                <p data-i18n="srv-label">Nuestros Servicios</p>
+            </div>
+            <h2 class="hero-title" data-i18n="srv-title">Repuestos</h2>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Comercializamos una amplia gama de respuestos para autoelevadores de todas las marcas.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Legitimos de importación y originales de fabricación nacional.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Comercializamos cadenas de elevación para autoelevadores tipo fleyer-BL-LH. Ruedas, cadenas, pernos de anclaje y pernos reguladores.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Respuestos para transmisiones, cables-bombas crucetas-correas.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc">· Horquillas para autoelevadores acero forjado SAE 1045-1040 para todos los modelos y tipo en distinas dimensiones y enganches. Construcción de parrilas protectoras de carga.</p>
+        </div>
+        <div class="hero-right" style="width:100%;">
+            <img src="Images/repuestos.png" />
+        </div>
+    </section>
+
+    <!-- Apiladores -->
+    <section class="hero" id="apiladores" style="display:none;">
+        <div class="hero-left">
+            <img src="Images/apilador.png" />
+        </div>
+        <div class="hero-right">
+            <div class="hero-eyebrow">
+                <span></span>
+                <p data-i18n="srv-label">Nuestros Servicios</p>
+            </div>
+            <h2 class="hero-title" data-i18n="srv-title" style="color:black !important;">Apiladores Eléctricos</h2>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc"> · Mantenga su operación en movimiento con un servicio técnico especializado en apiladores eléctricos. Realizamos mantenimiento preventivo y correctivo para garantizar el máximo rendimiento, seguridad y vida útil de sus equipos.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc"> · Nuestro equipo de técnicos capacitados trabaja sobre todas las marcas y modelos, efectuando diagnósticos precisos, inspecciones completas y reemplazo de componentes cuando es necesario. Atendemos sistemas eléctricos, hidráulicos,</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc"> baterías de tracción, motores, controles electrónicos, ruedas, frenos y mecanismos de elevación.</p>
+            <p class="section-desc" style="max-width:100%" data-i18n="srv-desc"> · Con un mantenimiento adecuado, sus apiladores eléctricos operarán con mayor eficiencia, menor consumo energético y máxima seguridad para los operadores. Confíe en nuestra experiencia para mantener sus equipos siempre listos para el trabajo.</p>
+        </div>
+    </section>
+
     <!-- PROCESS -->
     <section class="process" id="comoTrabajamos">
         <div class="section-label">
@@ -435,7 +508,7 @@
     <section class="projects" id="projects">
         <div class="section-label">
             <span></span>
-            <p data-i18n="proj-label">Nuestro Trabajo</p>
+            <p data-i18n="proj-label">Nuestros Productos</p>
         </div>
         <h2 class="section-title" data-i18n="proj-title">Productos destacados</h2>
         <p class="section-desc" data-i18n="proj-desc">Una selección de nuestros productos seleccionados.</p>
@@ -588,7 +661,7 @@
                             <option value="" data-i18n="f-select">Seleccione un servicio...</option>
                             <option data-i18n="s1-name">Autoelevadores</option>
                             <option data-i18n="s2-name">Elementos para movimientos de carga</option>
-                            <option data-i18n="s3-name">Apiladoras Eléctricas</option>
+                            <option data-i18n="s3-name">Apiladores Eléctricos</option>
                             <option data-i18n="s4-name">Autoelevadores con Motor Termico</option>
                             <option data-i18n="s5-name">Repuestos</option>
                             <option data-i18n="s6-name">Camiones</option>
