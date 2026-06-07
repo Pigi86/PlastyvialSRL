@@ -866,8 +866,7 @@ section {
 }
 
 .serviceGridLink {    
-    text-decoration:none;
-    cursor:pointer !important;
+    text-decoration:none;    
 }
 
 .service-card {
@@ -877,7 +876,8 @@ section {
     overflow: hidden;
     transition: background 0.3s;
     cursor: default;
-    height:100%;
+    height: 100%;
+    cursor: pointer;
 }
 
     .service-card::before {
