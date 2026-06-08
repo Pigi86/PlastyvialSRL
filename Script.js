@@ -267,7 +267,7 @@ function handleSubmit(e) {
         btn.style.background = '#4a90a4';
         btn.style.color = '#fff';
         btn.disabled = true;
-        sendEmail(btn);       
+        sendEmail(btn);
     }
 }
 
@@ -382,7 +382,7 @@ function sendEmail(btn) {
         "template_zwh89we",
         parametros
     )
-        .then(function (response) {            
+        .then(function (response) {
             console.log(response);
 
             errorLabel.innerText = "Hemos recibido tu mensaje! Nos comunicaremos contigo a la brevedad.";
@@ -391,7 +391,7 @@ function sendEmail(btn) {
             btn.style.color = '';
             btn.disabled = false;
         })
-        .catch(function (error) {            
+        .catch(function (error) {
             console.error(error);
 
             errorLabel.innerText = error;
@@ -399,7 +399,7 @@ function sendEmail(btn) {
             btn.style.background = '';
             btn.style.color = '';
             btn.disabled = false;
-        });  
+        });
 }
 
 // LIGHTBOX
@@ -459,3 +459,24 @@ function sendEmail(btn) {
         if (e.key === 'ArrowRight') nextBtn.click();
     });
 })();
+
+const inputsRequired = document.querySelectorAll('[required]');
+inputsRequired.forEach(input => {
+    input.addEventListener('blur', () => {
+        input.classList.add('touched');
+    });
+
+    input.addEventListener('invalid', (e) => {
+        e.preventDefault();
+        input.classList.add('touched');
+    });
+});
+
+input.addEventListener('blur', () => {
+    input.classList.add('touched');
+});
+
+input.addEventListener('invalid', (e) => {
+    e.preventDefault();
+    input.classList.add('touched');
+});
