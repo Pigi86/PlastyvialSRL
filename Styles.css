@@ -1421,9 +1421,9 @@ footer {
 }
 
 .backServices {
-    display:flex;
-    flex-direction:column;
-    align-self:flex-end;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
     padding: 10px 15px;
     background-color: var(--sky);
     color: black;
@@ -1434,10 +1434,10 @@ footer {
     font-weight: 500;
     font-size: 0.85rem;
     text-transform: uppercase;
-    color: var(--cream);  
+    color: var(--cream);
     transition: all 0.2s;
-    position:relative;
-    top:-5%;
+    position: relative;
+    top: -5%;
 }
 
 
@@ -1779,6 +1779,32 @@ section {
         }
 }
 
-input:focus:invalid {
-    border: 2px solid darkred;
+
+.error-msg {
+    display: none;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    padding: 6px 10px;
+    background: #fdecea;
+    border-left: 3px solid #e74c3c;
+    border-radius: 4px;
+}
+
+input:invalid.touched ~ .error-msg {
+    display: block;
+}
+
+input:invalid.touched {
+    border-color: darkred;
+    outline: none;
+}
+
+select:invalid.touched ~ .error-msg {
+    display: block;
+}
+
+select:invalid.touched {
+    border-color: darkred;
+    outline: none;
 }
