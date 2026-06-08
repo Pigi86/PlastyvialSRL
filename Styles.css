@@ -1778,3 +1778,7 @@ section {
             pointer-events: auto;
         }
 }
+
+input:focus:invalid {
+    border: 2px solid darkred;
+}
