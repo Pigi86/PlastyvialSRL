@@ -471,12 +471,3 @@ inputsRequired.forEach(input => {
         input.classList.add('touched');
     });
 });
-
-input.addEventListener('blur', () => {
-    input.classList.add('touched');
-});
-
-input.addEventListener('invalid', (e) => {
-    e.preventDefault();
-    input.classList.add('touched');
-});
