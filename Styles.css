@@ -1425,7 +1425,7 @@ footer {
     flex-direction:column;
     align-self:flex-end;
     padding: 10px 15px;
-    background-color: var(--navy);
+    background-color: var(--sky);
     color: black;
     text-decoration: none;
     border-radius: 5px;
