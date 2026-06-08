@@ -225,9 +225,7 @@ function setLang(lang) {
     document.querySelectorAll('[data-i18n-ph]').forEach(el => {
         const key = el.getAttribute('data-i18n-ph');
         if (t[key] !== undefined) el.placeholder = t[key];
-    });
-
-    buildTicker(lang);
+    });        
 }
 
 // Init
@@ -338,6 +336,16 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
             p.classList.remove('open');
             p.parentElement.classList.remove('open');
             p.style.display = "none";
+        });
+    });
+
+    const parents4 = document.querySelectorAll('.inicio, .nav-cta');
+    parents4.forEach(p => {
+        p.addEventListener('mouseenter', (e) => {
+            const parents5 = document.querySelectorAll('.submenu');
+            parents5.forEach(p2 => {
+                p2.style.display = "none";
+            });
         });
     });
 
