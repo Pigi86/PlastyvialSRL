@@ -475,6 +475,7 @@ nav {
     height: 160px;
     background-size: cover;
     background-position: center;
+    cursor: pointer;
 }
 
 .gallery-info {
