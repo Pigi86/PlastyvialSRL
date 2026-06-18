@@ -118,7 +118,7 @@ function buidGallery() {
         `<div class="gallery-card">
                 <div class="gallery-thumb" style="background-image: url('${t.url}');" data-full="${t.url}" data-caption="" role="button" tabindex="0" aria-label="Ver imagen ${t.name}">
                     <span class="zoom-overlay" aria-hidden="true">
-                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <i class="fa fa-search-plus" aria-hidden="true"></i>
                     </span>
                 </div>
                 <div class="gallery-info">
