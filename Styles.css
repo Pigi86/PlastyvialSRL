@@ -476,6 +476,62 @@ nav {
     background-size: cover;
     background-position: center;
     cursor: pointer;
+    position: relative;
+}
+
+    .gallery-thumb .zoom-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 180ms ease, transform 200ms ease;
+        color: rgba(255,255,255,0.95);
+    }
+
+    .gallery-thumb::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1.75) 100%);
+        opacity: 0;
+        transition: opacity 200ms ease;
+    }
+
+    .gallery-thumb:hover .zoom-overlay,
+    .gallery-thumb:focus .zoom-overlay,
+    .gallery-thumb:focus-within .zoom-overlay {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+    }
+
+    .gallery-thumb:hover::after,
+    .gallery-thumb:focus::after {
+        opacity: 1;
+    }
+
+.zoom-overlay i {
+    background: rgba(0,0,0,0.45);
+    padding: 6px;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.9);
+    transition: transform 200ms ease;    
+}
+
+.gallery-thumb:hover .zoom-overlay i,
+.gallery-thumb:focus .zoom-overlay i {
+    transform: scale(1.55);    
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-thumb .zoom-overlay,
+    .zoom-overlay i {
+        transition: none !important;
+    }
 }
 
 .gallery-info {
@@ -676,6 +732,44 @@ nav {
     color: var(--navy);
     width: 250px;
     height: 150px;
+}
+
+.tickerProduct {
+    background: transparent;
+    padding: 0.9rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.ticker-inner-product {
+    display: inline-flex;
+    gap: 0;
+    animation: ticker 28s linear infinite;
+}
+
+.ticker-item-product {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--navy);
+    width: 250px;
+    height: 150px;
+}
+
+@keyframes tickerProduct {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
 
 @keyframes tickerImage {
@@ -943,6 +1037,7 @@ section {
 /* ── PROCESS ── */
 .process {
     background: var(--navy);
+    margin-top: 4.5em;
 }
 
     .process .section-title {
