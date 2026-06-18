@@ -116,7 +116,11 @@ function buidGallery() {
     const doubled = [...items];
     document.getElementById('gallery-grid').innerHTML = doubled.map(t =>
         `<div class="gallery-card">
-                <div class="gallery-thumb" style="background-image: url('${t.url}');" data-full="${t.url}" data-caption="" role="button" tabindex="0" aria-label="Ver imagen ${t.name}"></div>
+                <div class="gallery-thumb" style="background-image: url('${t.url}');" data-full="${t.url}" data-caption="" role="button" tabindex="0" aria-label="Ver imagen ${t.name}">
+                    <span class="zoom-overlay" aria-hidden="true">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </span>
+                </div>
                 <div class="gallery-info">
                     <div class="gallery-name">${t.name}</div>
                     <div class="gallery-meta">${t.meta}</div>
@@ -225,7 +229,7 @@ function setLang(lang) {
     document.querySelectorAll('[data-i18n-ph]').forEach(el => {
         const key = el.getAttribute('data-i18n-ph');
         if (t[key] !== undefined) el.placeholder = t[key];
-    });        
+    });
 }
 
 // Init
