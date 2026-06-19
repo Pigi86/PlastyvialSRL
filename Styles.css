@@ -14,6 +14,10 @@
     --gray: #6b7a85;
     --light: #e8e4dc;
     --text: #1a2b35;
+    --error: #fdecea;
+    --errorBorder: #e74c3c;
+    --footer: #070f15;
+    --black: #111;
 }
 
 html {
@@ -454,7 +458,7 @@ nav {
 /* GALLERY */
 .gallery {
     padding: 7.5rem 6%;
-    background: #fff;
+    background: var(--white);
 }
 
 .gallery-grid {
@@ -581,7 +585,7 @@ nav {
 }
 
 .lightbox-caption {
-    color: #fff;
+    color: var(--white);
     margin-top: 0.75rem;
     text-align: center;
     font-size: 0.95rem;
@@ -591,8 +595,8 @@ nav {
     position: absolute;
     top: -14px;
     right: -14px;
-    background: #111;
-    color: #fff;
+    background: var(--black);
+    color: var(--white);
     border: none;
     width: 36px;
     height: 36px;
@@ -605,7 +609,7 @@ nav {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(0,0,0,0.5);
-    color: #fff;
+    color: var(--white);
     border: none;
     width: 44px;
     height: 64px;
@@ -1439,7 +1443,7 @@ section {
 
 /* ── FOOTER ── */
 footer {
-    background: #070f15;
+    background: var(--footer);
     padding: 3rem 8%;
     display: flex;
     align-items: center;
@@ -1883,12 +1887,12 @@ section {
 
 .error-msg {
     display: none;
-    color: #e74c3c;
+    color: var(--errorBorder);
     font-size: 0.85rem;
     margin-top: 4px;
     padding: 6px 10px;
-    background: #fdecea;
-    border-left: 3px solid #e74c3c;
+    background: var(--error);
+    border-left: 3px solid var(--errorBorder);
     border-radius: 4px;
 }
 
