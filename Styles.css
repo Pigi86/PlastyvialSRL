@@ -519,12 +519,12 @@ nav {
     padding: 6px;
     border-radius: 50%;
     box-shadow: 0 6px 18px rgba(0,0,0,0.9);
-    transition: transform 200ms ease;    
+    transition: transform 200ms ease;
 }
 
 .gallery-thumb:hover .zoom-overlay i,
 .gallery-thumb:focus .zoom-overlay i {
-    transform: scale(1.55);    
+    transform: scale(1.55);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1514,7 +1514,12 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     z-index: 1000; /* Keeps it above other content */
+    transition: all 0.2s;
 }
+
+    .back-to-top:hover {
+        background-color: var(--sky);
+    }
 
 .backServices {
     display: flex;
