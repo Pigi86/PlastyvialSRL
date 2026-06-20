@@ -242,7 +242,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.service-card, .process-step, .project-card, .why-item, .stat-card').forEach(el => {
+document.querySelectorAll('.service-card, .process-step, .project-card, .why-item').forEach(el => {
     el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(el);
