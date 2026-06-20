@@ -234,6 +234,7 @@ nav {
         .nav-links a:hover {
             color: var(--cream);
             background-color: var(--gold);
+            border-radius: 3px;
         }
 
 .nav-cta {
