@@ -159,7 +159,7 @@ nav {
     font-family: 'Libre Baskerville', serif;
     font-size: 1rem;
     font-weight: 700;
-    color: white;
+    color: var(--white);
     letter-spacing: 0.02em;
 }
 
@@ -191,7 +191,7 @@ nav {
         position: absolute;
         top: calc(100% + 6px);
         left: 0;
-        background: white;
+        background: var(--white);
         padding: 0.5rem 0.75rem;
         border-radius: 6px;
         box-shadow: 0 8px 30px rgba(13,31,45,0.08);
@@ -412,6 +412,8 @@ nav {
     background: var(--white);
     padding: 2rem 1.8rem;
     animation: fadeUp 0.7s ease both;
+    transition: all 0.2s;
+    cursor: pointer;
 }
 
     .stat-card:nth-child(1) {
@@ -430,6 +432,12 @@ nav {
     .stat-card:nth-child(4) {
         animation-delay: 0.7s;
     }
+
+    .stat-card:hover {
+        background: var(--sky) !important;
+        color: var(--white);
+    }
+
 
 .stat-num {
     font-family: 'Libre Baskerville', serif;
@@ -1271,6 +1279,8 @@ section {
     background: var(--white);
     padding: 2.5rem 2rem;
     text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
 }
 
     .why-stat:nth-child(2) {
@@ -1280,6 +1290,11 @@ section {
     .why-stat:nth-child(3) {
         background: var(--sky);
     }
+
+
+.why-stat:hover {
+    background: var(--gold) !important;
+}
 
 .why-stat-num {
     font-family: 'Libre Baskerville', serif;
@@ -1474,7 +1489,7 @@ footer {
 
 .footer-copy {
     font-size: 0.75rem;
-    color: white;
+    color: var(--white);
     text-align: center;
     width: 100%;
 }
@@ -1492,9 +1507,9 @@ footer {
     align-items: center;
     justify-content: center;
     border-radius: 6px;
-    border: 1px solid white;
+    border: 1px solid var(--white);
     text-decoration: none;
-    color: white;
+    color: var(--white);
     transition: transform 0.15s ease, background 0.15s ease;
 }
 
@@ -1817,7 +1832,7 @@ section {
         left: -100%;
         width: 100%;
         height: calc(100vh - 78px);
-        background: white;
+        background: var(--white);
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
