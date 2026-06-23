@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }, 50);
     }
 
-    const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a, #solicitarBtn, #verProdBtn, .backServicesLeft, .backServices, .serviceGridLink, .footer-logo');
+    const menuLinks = document.querySelectorAll('nav a[href^="#"], .footer-links a, #solicitarBtn, #verProdBtn, .backServicesLeft, .backServices, .serviceGridLink');
 
     menuLinks.forEach(link => {
         link.addEventListener("click", function (e) {
@@ -116,7 +116,7 @@ function buidGallery() {
     const doubled = [...items];
     document.getElementById('gallery-grid').innerHTML = doubled.map(t =>
         `<div class="gallery-card">
-                <div class="gallery-thumb" style="background-image: url('${t.url}');" data-full="${t.url}" data-caption="" role="button" tabindex="0" aria-label="Ver imagen ${t.name}">
+                <div class="gallery-thumb" style="background-image: url('${t.url}');" data-full="${t.url}" data-caption="${t.name}" role="button" tabindex="0" aria-label="Ver imagen ${t.name}">
                     <span class="zoom-overlay" aria-hidden="true">
                         <i class="fa fa-search-plus" aria-hidden="true"></i>
                     </span>
@@ -155,7 +155,7 @@ function buidProducts() {
             return `<div class="project-card featured">
                 <div class="project-thumb">
                     <div class="blueprint-bg"></div>
-                    <span class="project-tag" data-i18n="tag-roads">${t.tag}</span><span class="project-thumb-label"><img src="${t.url}" /></span>
+                    <span class="project-tag" data-i18n="tag-roads">${t.tag}</span><span class="project-thumb-label"><img src="${t.url}" alt="${t.name}" /></span>
                 </div>
                 <div class="project-info">
                     <div class="project-name">${t.name}</div>
@@ -166,7 +166,7 @@ function buidProducts() {
             return `<div class="project-card">
                 <div class="project-thumb">
                     <div class="blueprint-bg"></div>
-                    <span class="project-tag" data-i18n="tag-roads">${t.tag}</span><span class="project-thumb-label"><img src="${t.url}" /></span>
+                    <span class="project-tag" data-i18n="tag-roads">${t.tag}</span><span class="project-thumb-label"><img src="${t.url}"  alt="${t.name}" /></span>
                 </div>
                 <div class="project-info">
                     <div class="project-name">${t.name}</div>
@@ -211,7 +211,7 @@ function buildTickerImage() {
     const items = tickerImage;
     const doubled = [...items, ...items];
     document.getElementById('ticker-inner-image').innerHTML = doubled.map(t =>
-        `<img class="ticker-item-image" src="${t}" /><span class="ticker-dot-image"></span>`
+        `<img class="ticker-item-image" src="${t}"  alt="${t}" /><span class="ticker-dot-image"></span>`
     ).join('');
 }
 
@@ -424,10 +424,10 @@ function sendEmail(btn) {
     modal.innerHTML = `
     <div class="lightbox-inner" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
         <button class="lightbox-close" aria-label="Cerrar">✕</button>
-        <img class="lightbox-img" src="" alt="" />
-        <div class="lightbox-caption"></div>
+        <img class="lightbox-img" src="" alt="" />        
         <button class="lightbox-prev" aria-label="Anterior">‹</button>
         <button class="lightbox-next" aria-label="Siguiente">›</button>
+        <div class="lightbox-caption"></div>
     </div>`;
     document.body.appendChild(modal);
 
