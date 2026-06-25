@@ -1960,3 +1960,27 @@ select:invalid.touched {
     .whatsapp-float:hover {
         transform: scale(1.1);
     }
+
+/* Chrome, Edge y Safari */
+/*::-webkit-scrollbar {
+    width: 24px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+    border: 2px solid var(--navy);
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--cream);
+    }
+
+html {
+    scrollbar-color: var(--gold) var(--navy);
+    scrollbar-width: auto;
+}*/
