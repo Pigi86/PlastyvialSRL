@@ -493,11 +493,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const intro = document.getElementById("siteIntro");
     if (!intro) return;
 
+    let seen = null;
+    try { seen = sessionStorage.getItem('lp-intro-seen'); } catch (err) { /* storage no disponible */ }
+
+    if (seen) {
+        intro.remove();
+        return;
+    }
+
     const finishIntro = () => {
         intro.classList.add("is-leaving");
         document.body.classList.remove("intro-lock");
         document.documentElement.classList.remove("intro-active");
-
+        try { sessionStorage.setItem('lp-intro-seen', '1'); } catch (err) { /* storage no disponible */ }
         window.setTimeout(() => {
             intro.classList.add("is-hidden");
         }, 850);
