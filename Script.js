@@ -1,3 +1,7 @@
+// ── INTRO ANIMADA ──
+document.documentElement.classList.add("intro-active");
+document.body.classList.add("intro-lock");
+
 document.addEventListener("DOMContentLoaded", () => {
 
     const sections = document.querySelectorAll("section");
@@ -482,4 +486,29 @@ inputsRequired.forEach(input => {
         e.preventDefault();
         input.classList.add('touched');
     });
+});
+
+// Presentación inicial: una sola vez por carga de página.
+document.addEventListener("DOMContentLoaded", () => {
+    const intro = document.getElementById("siteIntro");
+    if (!intro) return;
+
+    const finishIntro = () => {
+        intro.classList.add("is-leaving");
+        document.body.classList.remove("intro-lock");
+        document.documentElement.classList.remove("intro-active");
+
+        window.setTimeout(() => {
+            intro.classList.add("is-hidden");
+        }, 850);
+    };
+
+    // La animación tiene una duración breve y elegante.
+    window.setTimeout(finishIntro, 2600);
+
+    // Respeta accesibilidad: si el usuario prefiere menos movimiento,
+    // salimos prácticamente de inmediato.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        window.setTimeout(finishIntro, 150);
+    }
 });
