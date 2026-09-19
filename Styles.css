@@ -1994,3 +1994,296 @@ html {
     scrollbar-color: var(--gold) var(--navy);
     scrollbar-width: auto;
 }*/
+
+
+/* =========================================================
+   INTRO ANIMADA — PRESENTACIÓN INSTITUCIONAL
+   ========================================================= */
+.site-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 45%, rgba(74,144,164,.14), transparent 34%), var(--navy);
+    color: var(--white);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .8s cubic-bezier(.77,0,.18,1), visibility .8s;
+}
+
+    .site-intro.is-leaving {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .site-intro.is-hidden {
+        display: none;
+    }
+
+.intro-grid {
+    position: absolute;
+    inset: -20%;
+    opacity: .16;
+    background-image: linear-gradient(rgba(74,144,164,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(74,144,164,.35) 1px, transparent 1px);
+    background-size: 42px 42px;
+    transform: perspective(500px) rotateX(60deg) scale(1.5);
+    transform-origin: center bottom;
+    animation: introGridMove 10s linear infinite;
+}
+
+.intro-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(10px);
+    pointer-events: none;
+}
+
+.intro-glow-one {
+    width: 32vw;
+    height: 32vw;
+    background: rgba(200,168,75,.10);
+    top: -12vw;
+    right: -8vw;
+    animation: introFloat 5s ease-in-out infinite;
+}
+
+.intro-glow-two {
+    width: 26vw;
+    height: 26vw;
+    background: rgba(74,144,164,.13);
+    bottom: -10vw;
+    left: -8vw;
+    animation: introFloat 6s ease-in-out infinite reverse;
+}
+
+.intro-content {
+    position: relative;
+    z-index: 2;
+    width: min(680px, 88vw);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: introContentIn 1.15s cubic-bezier(.16,1,.3,1) both;
+}
+
+.intro-line {
+    width: 0;
+    height: 2px;
+    margin-bottom: 30px;
+    background: var(--gold);
+    box-shadow: 0 0 20px rgba(200,168,75,.45);
+    animation: introLineIn .8s .2s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.intro-logo-wrap {
+    width: 112px;
+    height: 78px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 22px;
+    opacity: 0;
+    transform: translateY(18px) scale(.88);
+    animation: introLogoIn .9s .35s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+.intro-logo {
+    width: 112px;
+    height: 78px;
+    background: url('Images/logo_.png') center/contain no-repeat;
+    filter: drop-shadow(0 12px 24px rgba(0,0,0,.28));
+}
+
+.intro-kicker {
+    margin: 0 0 13px;
+    color: var(--sky);
+    font-family: 'DM Sans', sans-serif;
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: introTextIn .7s .65s ease forwards;
+}
+
+.intro-title {
+    margin: 0;
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(2.4rem, 6vw, 5.1rem);
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -.035em;
+    color: var(--white);
+    opacity: 0;
+    transform: translateY(18px);
+    animation: introTextIn .8s .78s cubic-bezier(.16,1,.3,1) forwards;
+}
+
+    .intro-title span {
+        color: var(--gold);
+        font-style: italic;
+        font-weight: 400;
+    }
+
+.intro-tagline {
+    margin: 18px 0 30px;
+    color: rgba(255,255,255,.62);
+    font-size: .95rem;
+    letter-spacing: .08em;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: introTextIn .7s .98s ease forwards;
+}
+
+.intro-loader {
+    width: 180px;
+    height: 1px;
+    background: rgba(255,255,255,.16);
+    overflow: hidden;
+    opacity: 0;
+    animation: introTextIn .5s 1.15s ease forwards;
+}
+
+    .intro-loader span {
+        display: block;
+        width: 45%;
+        height: 100%;
+        background: var(--gold);
+        box-shadow: 0 0 12px rgba(200,168,75,.7);
+        animation: introLoader 1.7s .95s cubic-bezier(.65,0,.35,1) forwards;
+    }
+
+.intro-est {
+    position: absolute;
+    right: 4vw;
+    bottom: 4vh;
+    color: rgba(255,255,255,.35);
+    font-family: 'DM Sans', sans-serif;
+    font-size: .65rem;
+    letter-spacing: .24em;
+    writing-mode: vertical-rl;
+    opacity: 0;
+    animation: introTextIn .7s 1.1s ease forwards;
+}
+
+@keyframes introContentIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes introLineIn {
+    to {
+        width: 90px;
+    }
+}
+
+@keyframes introLogoIn {
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes introTextIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes introLoader {
+    0% {
+        transform: translateX(-110%);
+    }
+
+    100% {
+        transform: translateX(230%);
+    }
+}
+
+@keyframes introGridMove {
+    from {
+        transform: perspective(500px) rotateX(60deg) scale(1.5) translateY(0);
+    }
+
+    to {
+        transform: perspective(500px) rotateX(60deg) scale(1.5) translateY(42px);
+    }
+}
+
+@keyframes introFloat {
+    0%,100% {
+        transform: translate3d(0,0,0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(0,18px,0) scale(1.05);
+    }
+}
+
+body.intro-lock {
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .intro-kicker {
+        letter-spacing: .18em;
+        font-size: .58rem;
+    }
+
+    .intro-title {
+        font-size: clamp(2.3rem, 13vw, 4rem);
+    }
+
+    .intro-tagline {
+        font-size: .82rem;
+    }
+
+    .intro-est {
+        right: 5vw;
+        bottom: 3vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-intro,
+    .intro-content,
+    .intro-line,
+    .intro-logo-wrap,
+    .intro-kicker,
+    .intro-title,
+    .intro-tagline,
+    .intro-loader,
+    .intro-est,
+    .intro-grid,
+    .intro-glow-one,
+    .intro-glow-two {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .intro-line {
+        width: 90px;
+    }
+
+    .intro-logo-wrap,
+    .intro-kicker,
+    .intro-title,
+    .intro-tagline,
+    .intro-loader,
+    .intro-est {
+        opacity: 1;
+        transform: none;
+    }
+}
